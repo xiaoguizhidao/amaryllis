@@ -1,0 +1,234 @@
+<?php
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ * 
+ * 
+ * function $this->getWholesalers()
+ * 
+ * returns
+ * 
+ * 
+
+  Array
+  (
+  [Wholesaler 1] => Array
+  (
+  [title] => Wholesaler 1
+  [image] => http://localhost/projects/YoungOnes/media/AS_Wholesaler/1.jpeg
+  [content] => this is the sample text for wholesaler
+  )
+ * )
+ */
+?>
+<?php
+$data = $this->fetchWholesellerData();
+?>
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<div class="page-title">
+    <h1><?php echo Mage::helper('contacts')->__('Wholesale Accounts') ?></h1>
+</div>
+<form method="post" id="wholesaleaccountform" action="<?php echo $this->getUrl("wholesaler/index/save") ?>">
+    <input type="hidden" value="<?php echo Mage::app()->getStore()->getStoreId(); ?>" name="status"/>
+    <input type="hidden" value="<?php echo Mage::getSingleton("core/session")->getFormKey(); ?>" name="form_key"/>
+    <input type="hidden" value="<?php echo $data["id"]; ?>" name="id"/>
+    <?php /* ?><input type="hidden" value="<?php echo Mage::app()->getStore()->getStoreId(); ?>" name="storeid"/>
+    <input type="hidden" value="<?php echo Mage::app()->getStore()->getCode(); ?>" name="storecode"/>
+    <input type="hidden" value="<?php echo Mage::app()->getLocale()->getLocaleCode(); ?>" name="storelocale"/> <?php */ ?>
+    <input type="hidden" value="<?php echo $this->__("Wholesale/Landscaper type") ?>" name="type"/>
+
+    <div class="fieldset">
+        <h2 class="legend"><?php echo Mage::helper('contacts')->__('Personal Information') ?></h2>
+        <ul class="form-list">
+            <li class="fields">
+                <div class="customer-name">
+                    <div class="field name-firstname">
+                        <label class="required" for="firstname"><em>*</em><?php echo Mage::helper('contacts')->__('First Name') ?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry" value="<?php echo $data["firstname"]; ?>" title="<?php echo Mage::helper('contacts')->__('First Name') ?>" placeholder="<?php echo Mage::helper('contacts')->__('First Name') ?>" style="text-transform: none" id="firstname" name="firstname">
+                        </div>
+                    </div>
+                    <div class="field name-lastname">
+                        <label class="required" for="lastname"><em>*</em><?php echo Mage::helper('contacts')->__('Last Name') ?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry" value="<?php echo $data["lastname"]; ?>" title="<?php echo Mage::helper('contacts')->__('Last Name') ?>" placeholder="<?php echo Mage::helper('contacts')->__('Last Name') ?>" style="text-transform: none" id="lastname" name="lastname">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="fields">
+                <div class="customer-name">
+                    <div class="field name-firstname">
+                        <label class="required" for="firstname"><em>*</em><?php echo Mage::helper('contacts')->__('Email') ?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry validate-email" value="<?php echo $data["email"]; ?>" title="<?php echo Mage::helper('contacts')->__('Email') ?>" placeholder="<?php echo Mage::helper('contacts')->__('Email') ?>" style="text-transform: none" id="email" name="email">
+                        </div>
+                    </div>
+                    <div class="field name-lastname">
+                        <label class="required" for="lastname"><em>*</em><?php echo Mage::helper('contacts')->__('Phone') ?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry validate-phone" value="<?php echo $data["phone"]; ?>" title="<?php echo Mage::helper('contacts')->__('Phone') ?>" placeholder="<?php echo Mage::helper('contacts')->__('Phone') ?>" style="text-transform: none" id="phone" name="phone">
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+    <div class="fieldset">
+        <h2 class="legend"><?php echo Mage::helper('contacts')->__('Address Information') ?></h2>
+        <ul class="form-list">
+            <li class="fields">
+                <div class="customer-name">
+                    <div class="field name-firstname">
+                        <label class="required" for="firstname"><em>*</em><?php echo Mage::helper('contacts')->__('Address1') ?></label>
+                        <div class="input-box">
+                            <input  style="width: 534px;" type="text" class="input-text required-entry" value="<?php echo $data["address1"]; ?>" title="<?php echo Mage::helper('contacts')->__('Address1') ?>" placeholder="<?php echo Mage::helper('contacts')->__('Address1') ?>" style="text-transform: none" id="address1" name="address1">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="fields">
+                <div class="customer-name">
+                    <div class="field name-lastname">
+                        <label class="required" for="lastname"><?php echo Mage::helper('contacts')->__('Address2') ?></label>
+                        <div class="input-box">
+                            <input   style="width: 534px;" type="text" class="input-text" value="<?php echo $data["address2"]; ?>" title="<?php echo Mage::helper('contacts')->__('Address2') ?>" placeholder="<?php echo Mage::helper('contacts')->__('Address2') ?>" style="text-transform: none" id="address2" name="address2">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="fields">
+                <div class="customer-name">
+                    <div class="field name-firstname">
+                        <label class="required" for="firstname"><em>*</em><?php echo Mage::helper('contacts')->__('City') ?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry" value="<?php echo $data["city"]; ?>" title="<?php echo Mage::helper('contacts')->__('City') ?>" placeholder="<?php echo Mage::helper('contacts')->__('City') ?>" style="text-transform: none" id="city" name="city">
+                        </div>
+                    </div>
+                    <div class="field name-lastname">
+                        <label class="required" for="lastname"><em>*</em><?php echo Mage::helper('contacts')->__('State') ?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry" value="<?php echo $data["state"]; ?>" title="<?php echo Mage::helper('contacts')->__('State') ?>" placeholder="<?php echo Mage::helper('contacts')->__('State') ?>" style="text-transform: none" id="state" name="state">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="fields">
+                <div class="customer-name">
+                    <div class="field name-firstname">
+                        <label class="required" for="firstname"><em>*</em><?php echo Mage::helper('contacts')->__('Zip') ?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry" value="<?php echo $data["zip"]; ?>" title="<?php echo Mage::helper('contacts')->__('Zip') ?>" placeholder="<?php echo Mage::helper('contacts')->__('Zip') ?>" style="text-transform: none" id="zip" name="zip">
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="fieldset">
+        <h2 class="legend"><?php echo Mage::helper('contacts')->__('Company Information') ?></h2>
+        <ul class="form-list">
+            <li class="fields">
+                <div class="customer-name">
+                    <div class="field name-firstname">
+                        <label class="required" for="firstname"><em>*</em><?php echo Mage::helper('contacts')->__('Company') ?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry" value="<?php echo $data["business"]; ?>" title="<?php echo Mage::helper('contacts')->__('Company') ?>" placeholder="<?php echo Mage::helper('contacts')->__('Company') ?>" style="text-transform: none" id="business" name="business">
+                        </div>
+                    </div>
+                    <div class="field name-lastname">
+                        <label class="required" for="lastname"><?php echo Mage::helper('contacts')->__('Company Site') ?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text" value="<?php echo $data["businesswebsite"]; ?>" title="<?php echo Mage::helper('contacts')->__('Company Site') ?>" placeholder="<?php echo Mage::helper('contacts')->__('Company Site') ?>" style="text-transform: none" id="businesswebsite" name="businesswebsite">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="fields">
+                <div class="customer-name">
+                    <div class="field name-firstname">
+                        <label class="required" for="firstname"><?php echo Mage::helper('contacts')->__('How did you find us?') ?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text" value="<?php echo $data["howyoufoundbiggrass"]; ?>" title="<?php echo Mage::helper('contacts')->__('How did you find us?') ?>" placeholder="<?php echo Mage::helper('contacts')->__('How did you find us?') ?>" style="text-transform: none" id="Howyoufoundbiggrass" name="howyoufoundbiggrass">
+                        </div>
+                    </div>
+                    <div class="field name-lastname">
+                        <label class="required" for="lastname"><?php echo Mage::helper('contacts')->__('Products of Interest') ?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text" value="<?php echo $data["productsofinterest"]; ?>" title="<?php echo Mage::helper('contacts')->__('Products of Interest') ?>" placeholder="<?php echo Mage::helper('contacts')->__('Products of Interest') ?>" style="text-transform: none" id="productsofinterest" name="productsofinterest">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="fields">
+                <div class="customer-name">
+                    <div class="field name-firstname">
+                        <label class="required" for="firstname"><?php echo Mage::helper('contacts')->__('Comments') ?></label>
+                        <div class="input-box">
+                            <textarea class="input-text" value="" title="<?php echo Mage::helper('contacts')->__('Comments') ?>" placeholder="<?php echo Mage::helper('contacts')->__('Comments') ?>" style="text-transform: none" id="comments" name="comments"><?php echo $data["comments"]; ?></textarea>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="fieldset">
+        <h2 class="legend"><?php echo Mage::helper('contacts')->__('Captcha'); ?></h2>
+        <ul class="form-list">
+            <li class="fields">
+                <div class="customer-name">
+                    <div class="field name-firstname" style="width: 100%;">
+                        <label class="required" for="firstname"><em>*</em><?php echo Mage::helper('contacts')->__('Insert Captcha Code') ?></label>
+                        <div style="clear: both;">
+           <div class="input-box" style="float: left;">
+            <input type="text" name="captchatext" id="captchatext" class="input-text required-entry"/>
+        </div>                 
+        <img src="<?php echo  $this->getUrl("wholesaler/index/captcha"); ?>" alt="<?php echo $this->__("validate")?>" style="float: left; padding-left: 16px;" id="captchaimage" name="captchaimage"/>
+        
+        <img alt="reload captcha" title="reload captcha" id="refresh" style="cursor: pointer;padding:4px 0 0 8px;float: left;" src="<?php echo $this->getskinurl("images/refresh.jpeg")?>"/>
+        
+        </div>
+    </div>
+                </div>
+            </li>
+        </ul>
+</div>
+
+    <div class="buttons-set">
+        <p class="required"><?php echo Mage::helper('contacts')->__('* Required Fields') ?></p>
+        <p class="back-link"><a class="back-link" href="javascript:window.history.go(-1);"><small> </small><?php echo Mage::helper('contacts')->__('Back') ?></a></p>
+        <button class="button" title="<?php echo Mage::helper('contacts')->__('Submit') ?>" type="submit"><span><span><?php echo Mage::helper('contacts')->__('Submit') ?></span></span></button>
+    </div>
+
+
+    
+
+
+
+
+
+</form>
+<script type="text/javascript">
+    $("refresh").observe("click",function(){
+        var srcs = $("captchaimage").readAttribute("src");
+        if(srcs.indexOf("temp") != -1)
+        {
+            srcsA = srcs.split("temp"); 
+            srcs = srcsA[0];
+        }
+        var imgs = new Element("img",{"alt":"loading captchaimage...","id":"captchaimage","src":srcs+"temp/"+new Date().getTime()+"/","style":"float:left;padding-left:16px;"});
+        $("captchaimage").remove();
+        $("refresh").insert({"before":imgs});
+    });
+
+    //<![CDATA[
+    var contactForm = new VarienForm('wholesaleaccountform', true);
+    //]]>
+</script>

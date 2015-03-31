@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<layout>
+    <default>
+        
+    </default>
+    <catalogrequest_adminhtml_catalogrequest_index>
+        <reference name="head">
+            <action method="setTitle" translate="title"><title>AS Catalogrequest Manager</title></action>
+            
+            <!-- css and js for light box -->
+            <action method="addItem"><type>skin_css</type><name>catalogrequest/css/lightbox.css</name></action>
+            <action method="addItem"><type>skin_js</type><name>catalogrequest/js/scriptaculous.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>catalogrequest/js/lightboxXL.js</name><params/></action>
+            
+        </reference>
+        <reference name="menu">
+            <action method="setActive"><menupath>media</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="catalogrequest/adminhtml_catalogrequest" name="catalogrequests_list"/>
+            <block type="adminhtml/template" name="head.lightbox" as="lightbox" template="catalogrequest/head.phtml"/>
+        </reference>
+    </catalogrequest_adminhtml_catalogrequest_index>
+
+    <catalogrequest_adminhtml_catalogrequest_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="catalogrequest/adminhtml_catalogrequest_grid" name="catalogrequest.adminhtml.grid"/>
+        </block>
+    </catalogrequest_adminhtml_catalogrequest_grid>
+    
+    
+    <catalogrequest_adminhtml_catalogrequest_edit>
+        <reference name="head">
+            <action method="setTitle" translate="title"><title>AS Catalogrequest Manager</title></action>
+            
+            <!-- css and js for light box -->
+            <action method="addItem"><type>skin_css</type><name>catalogrequest/css/lightbox.css</name></action>
+            <action method="addItem"><type>skin_js</type><name>catalogrequest/js/scriptaculous.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>catalogrequest/js/lightboxXL.js</name><params/></action>
+            
+        </reference>
+        <reference name="menu">
+            <action method="setActive"><menupath>media</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="catalogrequest/adminhtml_catalogrequest_edit" name="catalogrequest.edit" as="catalogrequest_edit" />
+            <block type="adminhtml/template" name="head.lightbox" as="lightbox" template="catalogrequest/head.phtml"/>
+        </reference>
+    </catalogrequest_adminhtml_catalogrequest_edit>
+    
+    
+</layout>

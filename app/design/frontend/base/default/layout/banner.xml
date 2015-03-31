@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+<!--
+Default layout, loads most of the pages
+-->
+
+    <banner_index_index>
+        <reference name="content">
+            <block type="banner/banner" name="banner_page" template="banner/banner.phtml"/>
+        </reference>
+    </banner_index_index>
+    <cms_index_index>
+        <reference name="head">
+            <!-- <action method="addItem"><type>skin_css</type><name>css/flexslider.css</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/jquery.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/jquery.flexslider-min.js</name></action> -->
+        </reference>
+    </cms_index_index>
+
+</layout>

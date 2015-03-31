@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<config>
+    <modules>
+        <AS_Banner>
+            <version>0.1.1</version>
+        </AS_Banner>
+    </modules>
+    <global>
+       
+        <models>
+            <banner>
+                <class>AS_Banner_Model</class>
+                <resourceModel>banner_resource</resourceModel>
+            </banner>
+            <banner_resource>
+                <class>AS_Banner_Model_Mysql4</class>
+                <entities>
+                    <banner>
+                        <table>as_banner</table>
+                    </banner>
+                    <banner_store>
+                            <table>as_banner_store</table>
+                     </banner_store>
+                </entities>
+            </banner_resource>
+        </models>
+        <blocks>
+            <banner>
+                <class>AS_Banner_Block</class>
+            </banner>
+        </blocks>
+        <helpers>
+            <banner>
+                <class>AS_Banner_Helper</class>
+            </banner>
+        </helpers>
+        <resources>
+            <banner_setup>
+                <setup>
+                    <class>AS_Banner_Model_Mysql4_Setup</class>
+                    <module>AS_Banner</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </banner_setup>
+            <banner_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </banner_read>
+            <banner_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </banner_write>
+        </resources>
+    </global>
+    <frontend>
+        <routers>
+            <banner>
+                <use>standard</use>
+                <args>
+                    <module>AS_Banner</module>
+                    <frontName>banner</frontName>
+                </args>
+            </banner>
+        </routers>
+        <layout>
+            <updates>
+                <banner  module="AS_Banner">
+                    <file>banner.xml</file>
+                </banner>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <banner>
+                <use>admin</use>
+                <args>
+                    <module>AS_Banner</module>
+                    <frontName>banner</frontName>
+                </args>
+            </banner>
+              <adminhtml>
+                <args>
+                    <modules>
+                        <as_banner before="Mage_Adminhtml">AS_Banner_Adminhtml</as_banner>
+                    </modules>
+                </args>
+            </adminhtml> 
+        </routers>
+    </admin>
+    <adminhtml>
+        
+        <layout>
+            <updates>
+                <banner  module="AS_Banner">
+                    <file>banner.xml</file>
+                </banner>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

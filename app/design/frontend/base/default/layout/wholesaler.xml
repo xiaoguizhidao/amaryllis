@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+    <!--
+    Default layout, loads most of the pages
+    -->
+    <default>
+        <reference name="top.links">
+            <action method="addLink" translate="title label">
+                <label>Wholesale/Landscaper</label>
+                <url>wholesaler</url>
+                <title>Wholesale/Landscaper</title>
+                <prepare>true</prepare>
+                <urlParams/>
+                <position>5</position>
+            </action>
+            <action method="addLink" translate="title label">
+                <label>Corporate</label>
+                <url>wholesaler/corporate/index</url>
+                <title>Corporate</title>
+                <prepare>true</prepare>
+                <urlParams/>
+                <position>7</position>
+            </action>
+        </reference>
+
+    </default>
+    <wholesaler_index_index>
+        <reference name="head">
+            <action method="setTitle" translate="title" module="customer"><title>Wholesale Accounts</title></action>
+        </reference>
+        <reference name="content">
+            <block type="wholesaler/wholesaler" name="wholesaler_page" template="wholesaler/wholesaler.phtml"/>
+        </reference>
+    </wholesaler_index_index>
+    <wholesaler_corporate_index>
+        <reference name="head">
+            <action method="setTitle" translate="title" module="customer"><title>Corporate Accounts</title></action>
+        </reference>
+        <reference name="content">
+            <block type="wholesaler/wholesaler" name="corporate_page" template="wholesaler/corporate.phtml"/>
+        </reference>
+    </wholesaler_corporate_index>
+
+</layout>

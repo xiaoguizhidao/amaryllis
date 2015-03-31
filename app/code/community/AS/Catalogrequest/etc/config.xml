@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<config>
+    <modules>
+        <AS_Catalogrequest>
+            <version>0.1.0</version>
+        </AS_Catalogrequest>
+    </modules>
+    <global>
+        <models>
+            <catalogrequest>
+                <class>AS_Catalogrequest_Model</class>
+                <resourceModel>catalogrequest_resource</resourceModel>
+            </catalogrequest>
+            <catalogrequest_resource>
+                <class>AS_Catalogrequest_Model_Mysql4</class>
+                <entities>
+                    <catalogrequest>
+                        <table>as_catalogrequest</table>
+                    </catalogrequest>
+                </entities>
+            </catalogrequest_resource>
+        </models>
+        <blocks>
+            <catalogrequest>
+                <class>AS_Catalogrequest_Block</class>
+            </catalogrequest>
+        </blocks>
+        <helpers>
+            <catalogrequest>
+                <class>AS_Catalogrequest_Helper</class>
+            </catalogrequest>
+        </helpers>
+        <resources>
+            <catalogrequest_setup>
+                <setup>
+                    <class>AS_Catalogrequest_Model_Mysql4_Setup</class>
+                    <module>AS_Catalogrequest</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </catalogrequest_setup>
+            <catalogrequest_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </catalogrequest_read>
+            <catalogrequest_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </catalogrequest_write>
+        </resources>
+    </global>
+    <frontend>
+        <routers>
+            <catalogrequest>
+                <use>standard</use>
+                <args>
+                    <module>AS_Catalogrequest</module>
+                    <frontName>catalogrequest</frontName>
+                </args>
+            </catalogrequest>
+        </routers>
+        <layout>
+            <updates>
+                <catalogrequest  module="AS_Catalogrequest">
+                    <file>catalogrequest.xml</file>
+                </catalogrequest>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <catalogrequest>
+                <use>admin</use>
+                <args>
+                    <module>AS_Catalogrequest</module>
+                    <frontName>catalogrequest</frontName>
+                </args>
+            </catalogrequest>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <catalogrequest  module="AS_Catalogrequest">
+                    <file>catalogrequest.xml</file>
+                </catalogrequest>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

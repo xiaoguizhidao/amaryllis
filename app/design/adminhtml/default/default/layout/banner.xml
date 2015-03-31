@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<layout>
+    <default>
+        
+    </default>
+    <banner_adminhtml_banner_index>
+        <reference name="head">
+            <action method="setTitle" translate="title"><title>AS Banner Manager</title></action>
+            
+            <!-- css and js for light box -->
+            <action method="addItem"><type>skin_css</type><name>banner/css/lightbox.css</name></action>
+            <action method="addItem"><type>skin_js</type><name>banner/js/scriptaculous.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>banner/js/lightboxXL.js</name><params/></action>
+            
+        </reference>
+        <reference name="menu">
+            <action method="setActive"><menupath>media</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="banner/adminhtml_banner" name="banners_list"/>
+            <block type="adminhtml/template" name="head.lightbox" as="lightbox" template="banner/head.phtml"/>
+        </reference>
+    </banner_adminhtml_banner_index>
+
+    <banner_adminhtml_banner_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="banner/adminhtml_banner_grid" name="banner.adminhtml.grid"/>
+        </block>
+    </banner_adminhtml_banner_grid>
+    
+    
+    <banner_adminhtml_banner_edit>
+        <reference name="head">
+            <action method="setTitle" translate="title"><title>AS Banner Manager</title></action>
+            
+            <!-- css and js for light box -->
+            <action method="addItem"><type>skin_css</type><name>banner/css/lightbox.css</name></action>
+            <action method="addItem"><type>skin_js</type><name>banner/js/scriptaculous.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>banner/js/lightboxXL.js</name><params/></action>
+            
+        </reference>
+        <reference name="menu">
+            <action method="setActive"><menupath>media</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="banner/adminhtml_banner_edit" name="banner.edit" as="banner_edit" />
+            <block type="adminhtml/template" name="head.lightbox" as="lightbox" template="banner/head.phtml"/>
+        </reference>
+    </banner_adminhtml_banner_edit>
+    
+    
+</layout>

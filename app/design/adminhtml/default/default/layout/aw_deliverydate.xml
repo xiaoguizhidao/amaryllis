@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_sales_order_view>
+        <reference name="order_tab_info">
+            <action method="setTemplate">
+                <template>aw_deliverydate/sales/order/view/tab/info.phtml</template>
+            </action>
+        </reference>
+    </adminhtml_sales_order_view>
+    <adminhtml_sales_order_invoice_view>
+        <reference name="form">
+            <action method="setTemplate">
+                <template>aw_deliverydate/sales/order/invoice/view/form.phtml</template>
+            </action>
+        </reference>
+    </adminhtml_sales_order_invoice_view>
+    <adminhtml_sales_order_create_index>
+        <!--
+        <reference name="delivery_date_custom">
+            <action method="setTemplate"><template>aw_deliverydate/sales/order/edit/deliverydate.phtml</template></action>
+        </reference>
+        
+        <reference name="head">
+            <action method="addJs"><file>tm/adminhtml/firecheckout/delivery-date.js</file></action>
+        </reference>
+        <reference name="optional_zip_countries">
+            <action method="setTemplate"><template>tm/firecheckout/directory/js/optional_zip_countries.phtml</template></action>
+        </reference>
+
+        <update handle="firecheckout_additional_block"/>
+        <reference name="firecheckout_additional">
+            <block type="core/template" name="sales_order_deliverydate" template="tm/firecheckout/sales/order/edit/deliverydate.phtml"/>
+            <block type="core/template" name="sales_order_firecheckout_comment" template="tm/firecheckout/sales/order/edit/comment.phtml" after="-"/>
+        </reference>
+        -->
+    </adminhtml_sales_order_create_index>
+</layout>	

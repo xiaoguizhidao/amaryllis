@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<layout>
+    <default>
+        
+    </default>
+    <wholesaler_adminhtml_wholesaler_index>
+        <reference name="head">
+            <action method="setTitle" translate="title"><title>AS Wholesaler Manager</title></action>
+            
+            <!-- css and js for light box -->
+            <action method="addItem"><type>skin_css</type><name>wholesaler/css/lightbox.css</name></action>
+            <action method="addItem"><type>skin_js</type><name>wholesaler/js/scriptaculous.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>wholesaler/js/lightboxXL.js</name><params/></action>
+            
+        </reference>
+        <reference name="menu">
+            <action method="setActive"><menupath>media</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="wholesaler/adminhtml_wholesaler" name="wholesalers_list"/>
+            <block type="adminhtml/template" name="head.lightbox" as="lightbox" template="wholesaler/head.phtml"/>
+        </reference>
+    </wholesaler_adminhtml_wholesaler_index>
+
+    <wholesaler_adminhtml_wholesaler_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="wholesaler/adminhtml_wholesaler_grid" name="wholesaler.adminhtml.grid"/>
+        </block>
+    </wholesaler_adminhtml_wholesaler_grid>
+    
+    
+    <wholesaler_adminhtml_wholesaler_edit>
+        <reference name="head">
+            <action method="setTitle" translate="title"><title>AS Wholesaler Manager</title></action>
+            
+            <!-- css and js for light box -->
+            <action method="addItem"><type>skin_css</type><name>wholesaler/css/lightbox.css</name></action>
+            <action method="addItem"><type>skin_js</type><name>wholesaler/js/scriptaculous.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>wholesaler/js/lightboxXL.js</name><params/></action>
+            
+        </reference>
+        <reference name="menu">
+            <action method="setActive"><menupath>media</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="wholesaler/adminhtml_wholesaler_edit" name="wholesaler.edit" as="wholesaler_edit" />
+            <block type="adminhtml/template" name="head.lightbox" as="lightbox" template="wholesaler/head.phtml"/>
+        </reference>
+    </wholesaler_adminhtml_wholesaler_edit>
+    
+    
+    
+    
+    <!-- corporate starts-->
+    <wholesaler_adminhtml_corporate_index>
+        <reference name="head">
+            <action method="setTitle" translate="title"><title>AS corporate Manager</title></action>
+            
+            <!-- css and js for light box -->
+            <action method="addItem"><type>skin_css</type><name>wholesaler/css/lightbox.css</name></action>
+            <action method="addItem"><type>skin_js</type><name>wholesaler/js/scriptaculous.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>wholesaler/js/lightboxXL.js</name><params/></action>
+            
+        </reference>
+        <reference name="menu">
+            <action method="setActive"><menupath>media</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="wholesaler/adminhtml_corporate" name="corporate_list"/>
+            <block type="adminhtml/template" name="head.lightbox" as="lightbox" template="wholesaler/corporate/head.phtml"/>
+        </reference>
+    </wholesaler_adminhtml_corporate_index>
+
+    <wholesaler_adminhtml_corporate_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="wholesaler/adminhtml_corporate_grid" name="corporate.adminhtml.grid"/>
+        </block>
+    </wholesaler_adminhtml_corporate_grid>
+    
+    
+    <wholesaler_adminhtml_corporate_edit>
+        <reference name="head">
+            <action method="setTitle" translate="title"><title>AS corporate Manager</title></action>
+            
+            <!-- css and js for light box -->
+            <action method="addItem"><type>skin_css</type><name>wholesaler/css/lightbox.css</name></action>
+            <action method="addItem"><type>skin_js</type><name>wholesaler/js/scriptaculous.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>wholesaler/js/lightboxXL.js</name><params/></action>
+            
+        </reference>
+        <reference name="menu">
+            <action method="setActive"><menupath>media</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="wholesaler/adminhtml_corporate_edit" name="corporate.edit" as="corporate_edit" />
+            <block type="adminhtml/template" name="head.lightbox" as="lightbox" template="wholesaler/corporate/head.phtml"/>
+        </reference>
+    </wholesaler_adminhtml_corporate_edit>
+    
+    
+</layout>

@@ -1,0 +1,163 @@
+<?php
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ * 
+ * 
+ * function $this->getBanners()
+ * 
+ * returns
+ * 
+ * 
+
+  Array
+  (
+    [Banner 1] => Array
+        (
+            [title] => Banner 1
+            [image] => http://localhost/projects/YoungOnes/media/AS_Banner/1.jpeg
+            [content] => this is the sample text for banner
+        )
+ * )
+ */
+?>
+
+
+
+<div class="catalog_request">
+<h1>Catalog Request</h1>
+
+<!--- php code here ---> 
+	
+      
+       <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('request_catalog')->toHtml() ?> 
+      <form id="request_form" class="request_form" action="<?php echo $this->getUrl("catalogrequest/index/save"); ?>" method="POST" name="CFForm_1">      
+      <table width="100%" cellspacing="5" cellpadding="0" border="0">
+        
+          <tbody><tr> 
+            <td width="20%" nowrap="" align="right"><font color="#CC0000">*</font><?php echo $this->__("First Name:"); ?></td>
+            <td width="80%">
+              <input type="text" class="textbox required-entry" size="30" value="" name="fname">
+            </td>
+          </tr>
+          <tr> 
+            <td width="20%" nowrap="" align="right"><font color="#CC0000">*</font><?php echo $this->__("Last Name:"); ?></td>
+            <td width="80%">
+              <input type="text" class="textbox required-entry" size="30" value="" name="lname">
+            </td>
+          </tr>
+          <tr> 
+            <td width="20%" nowrap="" align="right"><font color="#CC0000">*</font><?php echo $this->__("Mailing Address:"); ?></td>
+            <td width="80%">
+              <input type="text" class="textbox required-entry" size="30" value="" name="address">
+            </td>
+          </tr>
+          <tr> 
+            <td width="20%" nowrap="" align="right"><font color="#CC0000">*</font><?php echo $this->__("City:"); ?></td>
+            <td width="80%">
+              <input type="text" class="textbox required-entry" size="30" value="" name="city">
+            </td>
+          </tr>
+          <tr> 
+            <td width="20%" nowrap="" align="right"><font color="#CC0000">*</font><?php echo $this->__("State:"); ?></td>
+            <td width="80%"> 
+              <select class="selectbox required-entry" name="state">
+
+                <?php echo $this->getStates(); ?>
+                <option value="AK">Alaska</option>
+                
+              </select>
+            </td>
+          </tr>
+          <tr> 
+            <td width="20%" nowrap="" align="right"><font color="#CC0000">*</font><?php echo $this->__("Zip:"); ?></td>
+            <td width="80%">
+              <input type="text" class="textbox required-entry" maxlength="10" size="10" value="" name="zip">
+            </td>
+          </tr>
+          <tr>
+            <td width="20%" nowrap="" align="right">&nbsp;</td>
+            <td width="80%"><font size="2"><?php echo $this->__("If you'd like to receive our periodic 
+              newsletter, please enter your e-mail below."); ?></font></td>
+          </tr>
+          <tr> 
+            <td width="20%" nowrap="" align="right"><?php echo $this->__("E-mail:"); ?></td>
+            <td width="80%">
+              <input type="text" class="textbox validate-email" size="30" value="" name="email">
+            </td>
+          </tr>
+          <tr> 
+            <td width="20%" nowrap="" align="right"></td>
+            <td width="80%">
+              <input type="hidden" class="textbox" size="30" value="<?php echo Mage::app()->getStore()->getStoreId(); ?>" name="storeid">
+            </td>
+          </tr>
+          <tr> 
+            <td width="20%" nowrap="">&nbsp;</td>
+            <td width="80%">
+                <button class="button" title="Submit" onclick="save_request();return false;"><span><span>Submit</span></span></button>
+            </td>
+          </tr>
+        
+      </tbody>
+      
+   </table> <!--- php code here --->                              
+    </form>                    
+</div>
+<script type="text/javascript">
+    
+    
+    function save_request()
+    {
+        
+       var requestForm = new VarienForm('request_form');
+       
+       var status = requestForm.validator.validate(); 
+       
+       if(status)
+       {
+           requestForm.submit();
+       }
+    }
+</script>
+<style type="text/css">
+.catalog_request h1
+{
+    font-size: 26px;
+    font-weight: normal;
+}
+.catalog_request p a
+{
+    color: #A8A8A7;
+}
+.catalog_request p a:hover
+{
+    color: #EC5E7A;
+}
+.request_form .textbox
+{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E4E4E4;
+    padding: 5px;
+    width: 254px;
+}
+.request_form .selectbox
+{
+ 
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E4E4E4;
+    padding: 5px;
+    width: 265px;
+
+}
+.request_form td
+{
+    color: #555555;
+}
+.request_form table
+{
+    border-collapse: separate;
+    border-spacing: 0 1em;
+}
+</style>
