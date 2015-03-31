@@ -30,10 +30,17 @@
  *
  * @see Mage_Page_Block_Html_Topmenu
  */
+
+
+ $menuActive = Mage::getModel('cms/block')->load('main_menu')->getIsActive();
 ?>
 <?php $_menu = $this->getHtml('level-top') ?>
 
-<?php if($_menu): ?>
+<?php if($menuActive): ?>
+    <nav id="nav">
+ 	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('main_menu')->toHtml();?>
+    </nav>
+<?php else: ?>
     <nav id="nav">
         <ol class="nav-primary">
             <?php echo $_menu ?>

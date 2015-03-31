@@ -1290,12 +1290,17 @@ a.button:hover {
  * Container
  */
 .main-container,
-.footer-container,
-.container {
+.footer-container{
   position: relative;
   max-width: 1260px;
   margin: 0 auto;
   padding: 15px;
+}
+.container{
+  position: relative;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding:0 15px;
 }
 .main-container:after,
 .footer-container:after,
@@ -1307,9 +1312,11 @@ a.button:hover {
 
 @media only screen and (min-width: 480px) {
   .main-container,
-  .footer-container,
-  .container {
+  .footer-container{
     padding: 30px;
+  }
+  .container {
+    padding: 0 30px;
   }
 }
 .footer-container, 
@@ -3162,6 +3169,44 @@ body {
   display: table;
   clear: both;
 }
+@media only screen and (min-width: 771px) {
+  .page{
+    margin-top:-30px;
+  }
+  .wrapper{
+    border-top:solid 30px #ccc;
+  }
+}
+
+/* ============================================ *
+ * Header Top
+ * ============================================ */
+
+
+
+.header-top {
+  height: 32px;
+  line-height: 32px;
+  background-color: #323234;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #fff;
+}
+.header-top-links{
+  float:right;
+}
+.store-switcher{
+  position:absolute;
+  top:0;
+  left:0;
+  height:30px;
+  line-height:30px;
+
+}
+.header-links{
+  float:right;
+  padding-right:20px;
+}
 
 /* ============================================ *
  * Header
@@ -3171,6 +3216,7 @@ body {
     max-width: 1260px;
     margin: 0 auto;
     padding: 0 30px;
+    text-align:center;
   }
 
   .page-header-container {
@@ -3181,6 +3227,9 @@ body {
 .page-header {
   font-family: "Open Sans", "Helvetica Neue", Verdana, Arial, sans-serif;
 }
+  .page-header-container {
+    position: relative;
+  }
 
 /* ============================================ *
  * Language switcher + welcome message
@@ -3243,19 +3292,16 @@ body {
  * Logo
  * ============================================ */
 .logo {
-  display: block;
-  float: left;
-  width: 65%;
-  min-width: 100px;
-  min-height: 44px;
+  display: inline-block;
   text-align: center;
-  padding: 10px;
+  margin:54px auto 18px auto;
 }
 .logo img {
   max-width: 100%;
 }
 .logo .small {
   display: block;
+  margin-left:30px;
 }
 .logo .large {
   display: none;
@@ -3268,7 +3314,6 @@ body {
 @media only screen and (min-width: 771px) {
   .logo {
     max-width: 300px;
-    min-height: 90px;
   }
   .logo .small {
     display: none;
@@ -3304,6 +3349,14 @@ body {
   color: #636363;
   line-height: 42px;
   text-align: center;
+}
+
+@media only screen and (min-width: 771px) {
+  .skip-link {
+    height: 30px;
+    line-height: 30px;
+    background:transparent;
+  }
 }
 
 a.skip-link {
@@ -3464,7 +3517,8 @@ a.skip-link {
   #header-nav {
     display: block;
     /* Force visibility */
-    border-bottom: 1px solid #ededed;
+    border-bottom: 1px solid #ccc;
+    border-top: solid 1px #ccc;
   }
 }
 /* ============================================ *
@@ -3473,7 +3527,6 @@ a.skip-link {
 @media only screen and (min-width: 771px) {
   .nav-primary {
     display: block;
-    margin-top: 15px;
   }
 }
 /* ============================================ *
@@ -3484,14 +3537,14 @@ a.skip-link {
   position: relative;
   display: block;
   color: #636363;
-  line-height: 30px;
+  line-height: 36px;
   font-family: "Open Sans", "Helvetica Neue", Verdana, Arial, sans-serif;
 }
 .nav-primary li {
   position: relative;
 }
 .nav-primary li.level1 a {
-  border-bottom: 1px solid #cccccc;
+  text-align:left;
 }
 
 .nav-primary .menu-active > ul.level0,
@@ -3509,7 +3562,7 @@ a.skip-link {
 @media only screen and (max-width: 770px) {
   .nav-primary a.level0,
   .nav-primary a {
-    line-height: 35px;
+    line-height: 36px;
   }
   .nav-primary li.level0 ul {
     display: none;
@@ -3589,7 +3642,7 @@ a.skip-link {
     border: solid 1px #cccccc;
     position: absolute;
     left: 0;
-    top: 30px;
+    top: 36px;
     /* Height of ".nav-primary a.level0" */
     z-index: 10;
     width: 250px;
@@ -3658,17 +3711,28 @@ a.skip-link {
   padding: 20px;
 }
 
+#header-phone{
+    display:block;
+    position:absolute;
+    right:30px;
+    top:22px;
+}
 @media only screen and (min-width: 771px) {
   #header-search {
     display: block;
     position: absolute;
-    top: 55px;
-    right: 0;
+    top: 70px;
+    left: 0;
     width: 25%;
     height: 50px;
     padding: 0;
   }
+  #header-phone{
+    top:73px;
+    right:0;
+  }
 }
+
 /* ============================================ *
  * Search Input
  * ============================================ */
@@ -3683,7 +3747,7 @@ a.skip-link {
 
 #search {
   width: 100%;
-  height: 40px;
+  height: 36px;
   padding-right: 40px;
   font-family: "Open Sans", "Helvetica Neue", Verdana, Arial, sans-serif;
 }
@@ -3749,7 +3813,7 @@ a.skip-link {
     display: block;
     position: absolute;
     z-index: 200;
-    top: 40px;
+    top: 30px;
     right: 115px;
     width: 200px;
   }
@@ -3809,7 +3873,7 @@ a.skip-link {
     display: block;
     position: absolute;
     z-index: 200;
-    top: 40px;
+    top: 30px;
     right: 0;
     width: 320px;
     background: white;

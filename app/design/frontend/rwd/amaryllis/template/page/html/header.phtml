@@ -28,21 +28,12 @@
  */
 ?>
 
-<div class="header-language-background">
-    <div class="header-language-container">
-        <div class="store-language-container">
-            <?php echo $this->getChildHtml('store_switcher'); ?>
-        </div>
-    </div>
-</div>
-
 <header id="header" class="page-header">
     <div class="page-header-container">
         <a class="logo" href="<?php echo $this->getUrl('') ?>">
             <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
             <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
         </a>
-
         <?php // In order for the language switcher to display next to logo on smaller viewports, it will be moved here.
               // See app.js for details ?>
         <div class="store-language-container"></div>
@@ -65,15 +56,11 @@
                     <span class="icon"></span>
                     <span class="label"><?php echo $this->__('Account'); ?></span>
                 </a>
-
                 <!-- Cart -->
-
                 <div class="header-minicart">
                     <?php echo $this->getChildHtml('minicart_head'); ?>
                 </div>
             </div>
-
-
         </div>
 
         <!-- Navigation -->
@@ -93,6 +80,21 @@
         <div id="header-account" class="skip-content">
             <?php echo $this->getChildHtml('topLinks') ?>
         </div>
+
+
+
+        <div id="header-phone">
+            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('socialicons')->toHtml();?>
+        </div>
+
+        <?php if( Mage::getModel('cms/block')->load('header_links')->getIsActive() ){ ?>
+        <div class="header-links">
+            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('header_links')->toHtml();?>
+        </div>
+        <?php } ?>
+
+        <?php echo $this->getChildHtml('store_switcher'); ?>
+
     </div>
 </header>
 
