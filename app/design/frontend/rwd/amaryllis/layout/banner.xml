@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+<!--
+Default layout, loads most of the pages
+-->
+    <cms_index_index>
+        <reference name="content">
+            <block type="banner/banner" name="banner_page" template="banner/banner.phtml" before="-"/>
+        </reference>
+    </cms_index_index>
+
+</layout>

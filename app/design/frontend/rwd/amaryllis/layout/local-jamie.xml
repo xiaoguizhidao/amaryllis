@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <default> 
+        <!-- Remove callouts and rarely used stuff -->
+
+        <remove name="right.permanent.callout"/>
+        <remove name="left.permanent.callout"/>
+        <remove name="paypal.partner.right.logo"/>
+		<remove name="catalog.compare.sidebar" />  <!--product compare-->
+		<remove name="currency"/>
+
+		<!--<remove name="right.reports.product.viewed" /> -->
+		<!--<remove name="right.reports.product.compared" />--> <!--recently compared prod-->
+		
+		<remove name="product_tag_list" />
+		<remove name="footer_links" />
+		<!--<remove name="top.search" />-->
+		<remove name="welcome" />
+		<!--<remove name="switches" />-->
+		<!--? what's this<remove name="category.title" />-->
+		<!-- can't remove breaks automatic title tag <remove name="breadcrumbs" /> -->
+		<!--<remove name="top.links" />-->
+		<!--<remove name="account.links" />-->
+		<remove name="sale.reorder.sidebar" />
+		<remove name="checkout.cart.shipping" />
+		<remove name="wishlist_sidebar" />
+		<remove name="left.newsletter" />
+        <remove name="store_switcher" />
+				
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>
+
+                        
+        <reference name="top.links">
+			<remove name="wishlist_link" /> 
+ 			<remove name="checkout_cart_link"/>
+			<!-- Removes 'My Account' link - Default position: 10 -->
+            <action method="removeLinkByUrl"><url helper="customer/getAccountUrl"/></action>
+ 			<action method="removeLinkByUrl"><url helper="customer/getLoginUrl"/></action>
+        </reference>
+
+        <!-- removes from sidebar on advanced search and advanced search result -->
+        <reference name="left">
+            <remove name="right_currency"/>
+        </reference>
+        <reference name="right">
+            <remove name="right_currency"/>
+        </reference>
+
+
+                
+
+        <reference name="head">
+            <!-- Remove default stylesheets -->
+            <!--
+            <action method="removeItem">
+                <type>skin_css</type>
+                <name>css/styles.css</name>
+            </action>
+            -->
+            <action method="removeItem">
+                <type>skin_css</type>
+                <name>css/widgets.css</name>
+            </action>
+            <action method="removeItem">
+                <type>skin_css</type>
+                <name>css/print.css</name>
+            </action>
+ 			<!-- Adding jquery and twitter-bootstrap-files -->
+        	<action method="addItem">
+				<type>skin_js</type>
+				<name>js/jquery-1.10.2.min.js</name>
+			</action>
+        	<action method="addItem">
+				<type>skin_js</type>
+				<name>js/jquery-migrate-1.2.1.min.js</name>
+			</action>
+        	<action method="addItem">
+				<type>skin_js</type>
+				<name>js/modernizr.custom.js</name>
+			</action>
+				<!--		
+        	<action method="addItem">
+				<type>skin_js</type>
+				<name>js/jquery-1.8.3.min.js</name>
+			</action>			
+
+        	<action method="addItem">
+				<type>skin_js</type>
+				<name>js/jquery.easing.1.3.js</name>
+			</action>
+			-->
+			
+        	<action method="addItem">
+				<type>skin_js</type>
+				<name>js/global.js</name>
+			</action>
+			
+        	<action method="addItem">
+				<type>skin_js</type>
+				<name>js/bootstrap.js</name>
+			</action>
+        	<action method="addItem">
+				<type>skin_js</type>
+				<name>js/bootstrap-prototype-fix.js</name>
+			</action>
+			<!--
+            <block type="core/text" name="font_awesome">
+                <action method="setText">
+                    <text><![CDATA[<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">]]></text>
+                </action>
+            </block>
+        	<block type="core/text" name="font_roboto">
+                <action method="setText">
+                    <text><![CDATA[<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>]]></text>
+                </action>
+            </block>
+        	<block type="core/text" name="font_lato">
+                <action method="setText">
+                    <text><![CDATA[<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>]]></text>
+                </action>
+            </block>            
+	        <block type="core/text" name="jquery_no_conflict">
+                <action method="setText">
+                    <text><![CDATA[<script type="text/javascript">$.noConflict();</script>]]></text>
+                </action>
+            </block>
+            -->
+<!--
+            <block type="core/text" name="cdn_jquery_migrate">
+                <action method="setText">
+                    <text><![CDATA[<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.js"></script>]]></text>
+                </action>
+            </block>
+-->
+        </reference>
+
+        <reference name="after_body_start">
+            <block type="core/text" name="google_tag_manager">  
+                <action method="setText">
+                    <text><![CDATA[<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TJLX7M"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TJLX7M');</script>
+<!-- End Google Tag Manager -->]]></text>
+                </action>
+            </block>
+        </reference>
+
+		<!-- move cart to header -->
+		<reference name="right"> 
+			<action method="unsetChild"><name>cart_sidebar</name></action> 
+			<action method="unsetChild"><name>right.reports.product.viewed</name></action>
+		</reference>
+		<reference name="header"> 
+			<block type="checkout/cart_sidebar" name="cart_sidebar" template="checkout/cart/sidebar.phtml" as="mini_cart"> 
+				<action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/sidebar/default.phtml</template></action> 
+				<action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/cart/sidebar/default.phtml</template></action> 
+				<action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/sidebar/default.phtml</template></action> 
+				<block type="core/text_list" name="cart_sidebar.extra_actions" as="extra_actions" translate="label" module="checkout"> 
+					<label>Shopping Cart Sidebar Extra Actions</label> 
+				</block> 
+			</block> 
+       		<reference name="header">
+            	<block type="directory/currency" name="custom_currency_selector" template="directory/currency.phtml"/>
+        	</reference>
+		</reference>
+      
+    	<!-- Mage_Newsletter -->
+    	<reference name="footer">
+    	     <block type="newsletter/subscribe" name="footer.newsletter" as="footer_newsletter" template="newsletter/subscribe.phtml"/>
+    	 </reference>
+<!--
+		<reference name="header">
+		    <block type="core/template" name="custom_currency_selector" template="page/switch/currency.phtml"/>
+		</reference>
+-->
+		<reference name="before_body_end">
+    		<block type="core/template" name="modal_contact" template="contacts/modal-contact.phtml"></block>
+    		<block type="core/template" name="modal_subscribe" template="newsletter/modal-subscribe.phtml" after="-"></block>
+		</reference>		
+    </default>
+
+    <customer_logged_out>
+        <reference name="top.links">
+         		<action method="removeLinkByUrl"><url helper="customer/getLoginUrl"/></action>
+                <action method="addLink" translate="label title">
+                    <label><![CDATA[<span class="menu-label">My Account</span><span class="menu-icon"><i class="fa fa-user"></i></span>]]></label>
+                    <url>#</url>  <!-- can use full url also -->
+                    <title>My Account</title>
+                    <prepare/> <!-- set true if adding base url param -->
+                    <urlParams/>
+                    <position>1</position>
+                    <liParams/>
+                    <aParams>data-toggle="modal" data-target="#modal-login" class="login-link"</aParams>
+                    <beforeText/>
+                    <afterText/>
+                </action>
+<!--
+                <action method="addLink" translate="label title">
+                    <label>Register</label>
+                    <url>#</url>
+                    <title>Sign Up</title>
+                    <prepare/>
+                    <urlParams/>
+                    <position>1</position>
+                    <liParams/>
+                    <aParams>data-toggle="modal" data-target="#modal-login" class="register-link"</aParams>
+    				<beforeText/>
+    				<afterText/>
+                </action>
+                <action method="addLink" translate="label title">
+                    <label>Login</label>
+                    <url>#</url>
+                    <title>Login</title>
+                    <prepare/>
+                    <urlParams/>
+                    <position>2</position>
+                    <liParams/>
+                    <aParams>data-toggle="modal" data-target="#modal-login" class="login-link"</aParams>
+    				<beforeText/>
+    				<afterText/>
+                </action>
+-->
+        </reference>
+		<reference name="before_body_end">
+    		<block type="core/template" name="modal_login" template="bootstrap/modal-login.phtml"></block>
+		</reference>
+	</customer_logged_out>  
+	
+	<customer_logged_in>	
+        <reference name="top.links">
+         		<action method="removeLinkByUrl"><url helper="customer/getLogoutUrl"/></action>	
+                <action method="addLink" translate="label title">
+                    <label><![CDATA[<span class="menu-label">My Account</span><span class="menu-icon"><i class="fa fa-user"></i></span>]]></label>
+                    <url>#</url>  <!-- can use full url also -->
+                    <title>My Account</title>
+                    <prepare/> <!-- set true if adding base url param -->
+                    <urlParams/>
+                    <position>1</position>
+                    <liParams>
+                    	<class>dropdown</class>
+                    </liParams>
+                    <aParams>class="dropdown-toggle" data-toggle="dropdown"</aParams>
+    				<beforeText/>
+    				<afterText>
+					<![CDATA[
+					<ul class="dropdown-menu">
+						<li><a href="/customer/account">Profile</a></li>
+						<li><a href="/sales/order/history">My Orders</a></li>
+						<li><a href="/wishlist">Wishlist</a></li>
+						<li><a href="/customer/account/logout">Logout</a></li>
+					</ul>
+					]]>
+    				</afterText>
+                </action>
+        </reference>
+	</customer_logged_in>  
+  
+    <!-- Remove Account Navigation Links -->
+	<customer_account>
+        <!-- Add body class to all account pages -->
+        <reference name="root">
+            <action method="addBodyClass"><classname>customer-account</classname></action>
+        </reference>
+    	<reference name="customer_account_navigation">
+    	    <action method="removeLinkByName"><name>billing_agreements</name></action>
+    	    <action method="removeLinkByName"><name>tags</name></action>
+    	    <action method="removeLinkByName"><name>downloadable_products</name></action>
+    	    <action method="removeLinkByName"><name>giftregistry</name></action>
+    	    <action method="removeLinkByName"><name>reviews</name></action>
+    	</reference>
+		<reference name="left"> 
+			<action method="unsetChild"><name>cart_sidebar</name></action> 
+		</reference> 
+	</customer_account>
+    
+    <!-- Home Page -->
+	<cms_index_index>
+      <reference name="root">
+        <action method="setTemplate"><template>page/1column-fullwidth.phtml</template></action>
+      </reference>
+		<reference name="head">
+
+			<!-- owl carousel -->
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>js/owl/owl.carousel.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>js/owl/owl.theme.css</name>
+            </action>
+        	<action method="addItem">
+				<type>skin_js</type>
+				<name>js/owl/owl.carousel.min.js</name>
+			</action>
+        	<action method="addItem">
+				<type>skin_js</type>
+				<name>js/bxslider/plugins/jquery.easing.1.3.js</name>
+			</action>
+            <block type="core/text" name="owlcarousel">
+                <action method="setText">			
+					<text><![CDATA[
+					<script type="text/javascript">
+					jQuery(document).ready(function(){
+						
+ 						jQuery(".featured .carousel").owlCarousel({
+      						autoPlay: false, //Set AutoPlay to 3 seconds
+ 	  						navigation: true,
+                            navigationText: false,
+      						items : 6,
+      						itemsDesktop : [1199,6],
+      						itemsDesktopSmall : [979,5],
+      						itemsTablet : [768,4],
+      						itemsTabletSmall : [600,3],
+      						itemsMobile : [479,2]
+  						});
+ 						jQuery(".updates").owlCarousel({
+ 
+      						autoPlay: false, //Set AutoPlay to 3 seconds
+                            navigation: true,
+                            navigationText: '',
+      						singleItem:true,
+  						});
+                        jQuery(".video-links").owlCarousel({
+ 
+                            autoPlay: 4000, //Set AutoPlay to 3 seconds
+                            navigation: true,
+                            navigationText: '',
+                            singleItem:true
+                        });
+                        jQuery(".celebs").owlCarousel({
+ 
+                            autoPlay: 3000, //Set AutoPlay to 3 seconds
+                            navigation: true,
+                            navigationText: '',
+                            singleItem:true
+                        });
+						
+					});
+					</script>
+					]]></text>
+                </action>
+            </block>
+            <!-- / owl carousel -->
+		</reference>
+
+		<!-- removes home content since impossible to custom contain -->
+		<!-- using blocks instead -->
+		
+		
+		<remove name="page_content_heading" />
+		<remove name="cms_page" />
+		<reference name="content">
+    		<block type="core/template" name="home_boxes" template="bootstrap/home-boxes.phtml" after="-"></block>
+		</reference>
+		<reference name="content">
+    		<block type="core/template" name="featured" template="bootstrap/products-featured.phtml" after="-"></block>
+		</reference>
+		<reference name="content">
+    		<block type="core/template" name="home_footer" template="bootstrap/home-footer.phtml" after="-">
+    			<block type="testimonials/featured" name="testimonials_featured" template="bootstrap/testimonials/featured.phtml" />
+    		</block>
+		</reference>
+		<!--
+    	<reference name="content">
+	  		<block type="testimonials/featured" name="testimonials_featured" template="bootstrap/testimonials/featured.phtml" />
+    	</reference> 
+		-->
+		
+<!--
+		<reference name="content">
+    		<block type="core/template" name="brands" template="bootstrap/brands.phtml" before="-"></block>
+		</reference>
+		<reference name="content">
+    		<block type="core/template" name="cats_featured" template="bootstrap/categories-featured.phtml" before="-"></block>
+		</reference>
+
+		<reference name="content">
+    		<block type="core/template" name="hero" template="bootstrap/hero.phtml" before="-"></block>
+		</reference>
+-->
+    </cms_index_index>  
+    
+    <!-- search -->
+    <catalogsearch_result_index> 
+      <reference name="root">
+        <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+      </reference>
+    </catalogsearch_result_index> 
+    <catalogsearch_advanced_index> 
+      <reference name="root">
+        <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+      </reference>
+    </catalogsearch_advanced_index> 
+    <catalogsearch_advanced_result> 
+      <reference name="root">
+        <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+      </reference>
+    </catalogsearch_advanced_result>
+    
+    <!-- Category -->
+    <catalog_category_default> 
+      <reference name="root">
+        <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+      </reference>
+	  <reference name="left"> 
+    	<block type="cms/block" name="left_banners" after="-">
+        	<action method="setBlockId"><block_id>left_banners</block_id></action>
+    	</block>
+		<block type="reports/product_viewed" after="-" name="left.reports.product.viewed" template="reports/product_viewed.phtml" />
+	  </reference>
+    </catalog_category_default>
+    
+    
+    <!-- Category Layered -->
+    <catalog_category_layered> 
+      <reference name="root">
+        <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+      </reference>
+	  <reference name="left"> 
+    	<block type="cms/block" name="left_banners" after="-">
+        	<action method="setBlockId"><block_id>left_banners</block_id></action>
+    	</block>
+		<block type="reports/product_viewed" after="-" name="left.reports.product.viewed" template="reports/product_viewed.phtml" />
+	  </reference>
+        <!--
+        to move layered nav
+        <reference name="left">
+            <action method="unsetChild"><alias>catalog.leftnav</alias></action>
+        </reference>
+        <reference name="product_list">
+            <action method="insert"><blockName>catalog.leftnav</blockName></action>
+        </reference>
+        -->
+    </catalog_category_layered>
+    <catalog_product_view>
+      <reference name="root">
+        <action method="setTemplate"><template>page/1column-fullwidth.phtml</template></action>
+      </reference>
+    	<reference name="head">
+        	<action method="removeItem"><type>skin_js</type><name>js/jqzoom/jquery-1.3.1.min.js</name></action>
+        	<action method="removeItem"><type>skin_js</type><name>js/jqzoom/jquery.jqzoom1.0.1.js</name></action>
+            <!--   
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>js/bxslider/jquery.bxslider.css</name>
+            </action>  
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>js/bootstrap-lightbox.css</name>
+            </action>            
+        	<action method="addItem">
+				<type>skin_js</type>
+				<name>js/bootstrap-lightbox.min.js</name>
+			</action>  
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>js/jqzoom/css/jquery.jqzoom.css</name>
+            </action>
+        	<action method="addItem">
+				<type>skin_js</type>
+				<name>js/bxslider/jquery.bxslider.min.js</name>
+			</action>
+        	<action method="addItem">
+				<type>skin_js</type>
+				<name>js/bxslider/plugins/jquery.easing.1.3.js</name>
+			</action>
+            -->  
+
+
+            <!-- owl carousel -->
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>js/owl/owl.carousel.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>js/owl/owl.theme.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/owl/owl.carousel.min.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/bxslider/plugins/jquery.easing.1.3.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/beforeafter/jquery-ui.min.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/beforeafter/jquery.beforeafter-1.4.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/beforeafter/jquery.ui.touch-punch.min.js</name>
+            </action>
+            <block type="core/text" name="owlcarousel">
+                <action method="setText">           
+                    <text><![CDATA[
+                    <script type="text/javascript">
+                    jQuery(document).ready(function(){
+                        
+                        jQuery(".block .carousel").owlCarousel({
+ 
+                            autoPlay: false, //Set AutoPlay to 3 seconds
+                            navigation: true,
+                            navigationText: false,
+                            items : 4,
+                            itemsDesktop : [1199,4],
+                            itemsDesktopSmall : [979,4],
+                            itemsTablet : [768,3],
+                            itemsTabletSmall : [600,2],
+                            itemsMobile : [479,2]
+ 
+                        });
+                        jQuery(".more-views .carousel").owlCarousel({
+ 
+                            autoPlay: false, //Set AutoPlay to 3 seconds
+                            navigation: true,
+                            navigationText: false,
+                            pagination: false,
+                            items : 6,
+                            itemsDesktop : [1199,6],
+                            itemsDesktopSmall : [979,5],
+                            itemsTablet : [768,6],
+                            itemsTabletSmall : [600,5],
+                            itemsMobile : [479,4]
+                        });
+
+                        jQuery('#ba-container').beforeAfter({
+                            showFullLinks:true,
+                            beforeLinkText: 'Before',
+                            afterLinkText: 'After',
+                            linkDisplaySpeed: 500,
+                            dividerColor: '#fff',
+                            imagePath: '/skin/frontend/bootstrap/default/js/beforeafter/'
+                        });
+
+                    });
+                    </script>
+                    ]]></text>
+                </action>
+            </block>
+            <!-- / owl carousel -->
+
+
+        	<action method="addItem">
+				<type>skin_js</type>
+				<name>js/elevatezoom/jquery.elevateZoom-3.0.8.min.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/jquery.hoverIntent.minified.js</name>
+			</action>
+
+
+    	</reference>
+ 
+    	<reference name="content">
+    	<!--
+        	<block type="catalog/product_list_related" name="catalog.product.related" as="related_products" template="catalog/product/list/related.phtml" />
+        -->
+
+            <!-- add the block name to a parent 
+            <action method="insert">
+                <block>catalog.product.related</block>
+            </action>
+            -->
+<!--
+blockName is your block unique name across the layout, product.view for example
+siblingName is an block unique name, that is already exists in insertion target block, used for positioning of your block. Leave empty to display it at the top or at the bottom.
+after is a boolean identifier of block position. If equals to 1, then the block will be added after siblingName or in the bottom of the children list if siblingName is empty
+alias is the alias of your block, if it is empty the name of block will be used.
+
+    	<action method="insert">
+    		<blockName>catalog.product.related</blockName>
+    		<siblingName>product.info.upsell</siblingName>
+    		<after>1</after>
+    		<alias>related_products</alias>
+    	</action>
+-->
+
+      		<!-- forces options layout -->
+      		<reference name="product.info">
+                <block type="core/template_facade" name="product.info.container1" as="container1">
+                    <action method="setDataByKey"><key>alias_in_layout</key><value>container1</value></action>
+                    <action method="setDataByKeyFromRegistry"><key>options_container</key><key_in_registry>product</key_in_registry></action>
+                    <action method="append"><block>product.info.options.wrapper</block></action>
+                    <action method="append"><block>product.info.options.wrapper.bottom</block></action>
+                </block>
+        		<remove name="product.info.container2" />
+      		</reference>
+    	</reference>   
+        <reference name="right">
+            <action method="unsetChild"><alias>catalog.product.related</alias></action>
+        </reference>   
+    </catalog_product_view>
+    <checkout_cart_index>
+        <reference name="content">
+        <!--
+            <remove name="checkout.cart.shipping"/>
+        
+        	<remove name="checkout.cart.crosssell"/>
+        	-->
+        </reference>
+    </checkout_cart_index>
+	<checkout_onepage_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-right-checkout.phtml</template></action>
+        <block type="page/html_header" name="header" as="header" template="page/html/header_checkout.phtml"/>
+        <block type="page/html_footer" name="footer" as="footer" template="page/html/footer_checkout.phtml"/>
+        </reference>
+        <!--
+        <reference name="header">
+            <action method="setTemplate"><template>page/html/header_checkout.phtml</template></action>
+        </reference >
+        <reference name="footer">
+            <action method="setTemplate"><template>page/html/footer_checkout.phtml</template></action>
+        </reference>-->
+	</checkout_onepage_index>
+	<checkout_onepage_success>
+	   	<!-- todo what the fuck is this this is the crosssell items after sale
+    	<reference name="content">
+ 
+        	<block type="core/template" name="cross" template="mymodule/checkout/details.phtml"/>
+
+    	</reference>
+    	        	-->
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+	</checkout_onepage_success>
+	
+	
+    <checkout_onepage_failure translate="label">
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </checkout_onepage_failure>	
+	
+	
+	
+    <sendfriend_product_send>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+		<remove name="header"/> 
+		<remove name="footer"/>
+    </sendfriend_product_send>
+
+
+    <ajax_index_quickview>
+        <reference name="head">
+            <!-- owl carousel -->
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>js/owl/owl.carousel.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>js/owl/owl.theme.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/owl/owl.carousel.min.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/bxslider/plugins/jquery.easing.1.3.js</name>
+            </action>
+            <block type="core/text" name="owlcarousel">
+                <action method="setText">           
+                    <text><![CDATA[
+                    <script type="text/javascript">
+                    jQuery(document).ready(function(){
+                        
+                        jQuery(".more-views .carousel").owlCarousel({
+ 
+                            autoPlay: false, //Set AutoPlay to 3 seconds
+                            navigation: true,
+                            navigationText: false,
+                            pagination: false,
+                            items : 6,
+                            itemsDesktop : [1199,6],
+                            itemsDesktopSmall : [979,5],
+                            itemsTablet : [768,6],
+                            itemsTabletSmall : [600,5],
+                            itemsMobile : [479,4]
+                        });
+                        
+                    });
+                    </script>
+                    ]]></text>
+                </action>
+            </block>
+            <!-- / owl carousel -->
+        </reference>
+        <reference name="product.info">
+            <action method="unsetChild"><name>product.info.media</name></action>
+            <block type="catalog/product_view_media"
+                   name="product.info.media"
+                   as="media"
+                   template="bootstrap/ajax/catalog/product/view/quickview_media.phtml"/>
+        </reference>
+        <reference name="content">
+            <!-- forces options layout -->
+            <reference name="product.info">
+                <block type="core/template_facade" name="product.info.container1" as="container1">
+                    <action method="setDataByKey"><key>alias_in_layout</key><value>container1</value></action>
+                    <action method="setDataByKeyFromRegistry"><key>options_container</key><key_in_registry>product</key_in_registry></action>
+                    <action method="append"><block>product.info.options.wrapper</block></action>
+                    <action method="append"><block>product.info.options.wrapper.bottom</block></action>
+                </block>
+                <remove name="product.info.container2" />
+            </reference>
+        </reference>
+    </ajax_index_quickview>
+</layout>

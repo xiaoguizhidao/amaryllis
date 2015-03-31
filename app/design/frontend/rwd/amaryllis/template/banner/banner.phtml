@@ -1,0 +1,45 @@
+<?php
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ * 
+ * 
+ * function $this->getBanners()
+ * 
+ * returns
+ * 
+ * 
+
+  Array
+  (
+    [Banner 1] => Array
+        (
+            [title] => Banner 1
+            [image] => http://localhost/projects/YoungOnes/media/AS_Banner/1.jpeg
+            [content] => this is the sample text for banner
+        )
+ * )
+ */
+?>
+<?php
+$bannerCollection = $this->getBanners();
+?>
+<div class="hero-wrap">
+	    <ul class="hero">
+	    	<?php
+                foreach($bannerCollection as $banner)
+                {
+                    ?>
+                <li>
+                    <a href="<?php echo $banner["link"]?>" class="hero-link">
+                        <img src="<?php echo $banner['image']?>" />
+                        <h1 class="hero-title"><?php echo $banner["title"]?></h1>
+                        <p class="hero-content"><?php echo $banner['content']?></p>
+                    </a>
+                </li>
+                <?php
+                }
+                ?>  
+	    </ul>
+</div>
