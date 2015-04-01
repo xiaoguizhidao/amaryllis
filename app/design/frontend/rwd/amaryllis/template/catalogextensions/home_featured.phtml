@@ -36,6 +36,7 @@ $store = Mage::app()->getStore();
 $code  = $store->getCode();
 $enable = Mage::getStoreConfig('catalogextensions/config2/active',$code);
 ?>
+HOME FEATURED
 <?php if($enable == 1) { ?>
 <div class="maintitle">
             <div class="titlemain"><?php echo Mage::getStoreConfig('catalogextensions/config2/title',$code); ?></div>
