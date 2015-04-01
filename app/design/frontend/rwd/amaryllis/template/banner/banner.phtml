@@ -34,8 +34,10 @@ $bannerCollection = $this->getBanners();
                 <li>
                     <a href="<?php echo $banner["link"]?>" class="hero-link">
                         <img src="<?php echo $banner['image']?>" />
-                        <h1 class="hero-title"><?php echo $banner["title"]?></h1>
-                        <p class="hero-content"><?php echo $banner['content']?></p>
+                        <div class="hero-content">
+                            <h1 class="hero-title"><?php echo $banner["title"]?></h1>
+                            <p class="hero-text"><?php echo $banner['content']?></p>
+                        </div>
                     </a>
                 </li>
                 <?php
