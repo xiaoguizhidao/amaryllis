@@ -67,7 +67,12 @@
 
                 <action method="addItem"><type>skin_js</type><name>js/app.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/lib/imagesloaded.js</name></action>
-                <action method="addLinkRel"><rel>stylesheet</rel><href>//fonts.googleapis.com/css?family=Raleyway|Open+Sans:300,400,700|Roboto+Condensed:400,600</href></action>
+
+
+
+<action method="addLinkRel"><rel>stylesheet</rel><href>//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700,700italic|Oswald|Lato:400,700|Slabo+27px|Lora:400,400italic,700,700italic|Montserrat:400,700</href></action>
+
+
                 <action method="addLinkRel"><rel>stylesheet</rel><href>//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css</href></action>
                 <action method="addItem"><type>skin_js</type><name>js/minicart.js</name></action>
 

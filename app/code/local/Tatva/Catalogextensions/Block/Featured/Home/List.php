@@ -16,6 +16,7 @@ class Tatva_Catalogextensions_Block_Featured_Home_List extends Tatva_Catalogexte
     	{
         parent::__construct();
         $storeId    = Mage::app()->getStore()->getId();
+
         $products = Mage::getModel('catalog/product')->getCollection()
             ->addAttributeToFilter(array(array('attribute' => 'featured', 'eq' => '1')))
             ->addAttributeToSelect('*')
