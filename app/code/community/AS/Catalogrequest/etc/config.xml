@@ -68,7 +68,7 @@ and open the template in the editor.
         </routers>
         <layout>
             <updates>
-                <catalogrequest  module="AS_Catalogrequest">
+                <catalogrequest module="AS_Catalogrequest">
                     <file>catalogrequest.xml</file>
                 </catalogrequest>
             </updates>

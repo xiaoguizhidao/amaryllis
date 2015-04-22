@@ -25,9 +25,7 @@
            <!-- <remove name="wishlist_link" /> -->
             <remove name="checkout_cart_link"/>
             <!-- Removes 'My Account' link - Default position: 10 -->
-            <action method="removeLinkByUrl"><url helper="customer/getAccountUrl"/></action>
-            <action method="removeLinkByUrl"><url helper="customer/getLoginUrl"/></action>
-            <action method="removeLinkByUrl"><url helper="customer/getRegisterUrl"/></action>
+
         </reference>
 
         <!-- remove paypal from top cart -->
@@ -47,76 +45,18 @@
         </reference>
         <reference name="top.links">
             <action method="removeLinkByUrl"><url helper="customer/getLoginUrl"/></action>
-            <action method="addLink" translate="label title">
-                <label><![CDATA[Register]]></label>
-                <url>#</url>  <!-- can use full url also -->
-                <title>Register</title>
-                <prepare/> <!-- set true if adding base url param -->
-                <urlParams/>
-                <position>1</position>
-                <liParams/>
-                <aParams>class="register-link"</aParams>
-                <beforeText/>
-                <afterText/>
-            </action>
-            <action method="addLink" translate="label title">
-                <label><![CDATA[Login]]></label>
-                <url>#</url>  <!-- can use full url also -->
-                <title>Login</title>
-                <prepare/> <!-- set true if adding base url param -->
-                <urlParams/>
-                <position>1</position>
-                <liParams/>
-                <aParams>class="login-link"</aParams>
-                <beforeText/>
-                <afterText/>
-            </action>
         </reference>
         <!-- mmc removing since using loginradius -->
 		<reference name="before_body_end">
+            <!--
             <block type="core/template" name="modal_subscribe" template="newsletter/modal-subscribe.phtml" after="-"></block>
+        -->
         </reference>    
 	</customer_logged_out>   
     
     <customer_logged_in>    
         <reference name="top.links">
             <action method="removeLinkByUrl"><url helper="customer/getLogoutUrl"/></action>
-            <action method="addLink" translate="label title">
-                <label><![CDATA[Profile]]></label>
-                <url>/customer/account/</url>  <!-- can use full url also -->
-                <title>Profile</title>
-                <prepare/> <!-- set true if adding base url param -->
-                <urlParams/>
-                <position>1</position>
-                <liParams/>
-                <aParams></aParams>
-                <beforeText/>
-                <afterText/>
-            </action>
-            <action method="addLink" translate="label title">
-                <label><![CDATA[Orders]]></label>
-                <url>/sales/order/history/</url>  <!-- can use full url also -->
-                <title>Orders</title>
-                <prepare/> <!-- set true if adding base url param -->
-                <urlParams/>
-                <position>99</position>
-                <liParams/>
-                <aParams></aParams>
-                <beforeText/>
-                <afterText/>
-            </action>
-            <action method="addLink" translate="label title">
-                <label><![CDATA[Logout]]></label>
-                <url helper="customer/getLogoutUrl"/> <!-- can use full url also -->
-                <title>Logout</title>
-                <prepare/> <!-- set true if adding base url param -->
-                <urlParams/>
-                <position>100</position>
-                <liParams>class="logout-link"</liParams>
-                <aParams></aParams>
-                <beforeText/>
-                <afterText/>
-            </action>
         </reference>
     </customer_logged_in> 
 
@@ -174,13 +114,14 @@
                 </block>
                 -->
 
-                <!-- mmc add shipping tab 
-                <block type="cms/block" name="product.shipping" as="product_shipping" after="-">
+                <!-- mmc add shipping tab
+                <block type="cms/block" name="product.pricing_caladiums" as="pricing_caladiums" after="-">
                     <action method="addToParentGroup"><group>detailed_info</group></action>
-                    <action method="setTitle" translate="value"><value>Shipping</value></action>
-                    <action method="setBlockId"><block_id>product_shipping</block_id></action>
+                    <action method="setTitle" translate="value"><value>Pricing</value></action>
+                    <action method="setBlockId"><block_id>pricing_caladiums</block_id></action>
                 </block>
                 -->
+            
                 <!-- mmc removed native sharing block 
                 <reference name="product.info.options.wrapper.bottom">
                     <action method="unsetChild"><name>product.info.sharing</name></action>

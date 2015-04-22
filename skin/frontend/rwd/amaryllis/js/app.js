@@ -955,7 +955,7 @@ $j(document).ready(function () {
         itemsTablet: [768,3],
         itemsTabletSmall: [600,2],
         itemsMobile : [479,1],
-        navigationText : false,
+        navigationText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
         scrollPerPage: true,
         slideSpeed: 1000,
         lazyLoad: true

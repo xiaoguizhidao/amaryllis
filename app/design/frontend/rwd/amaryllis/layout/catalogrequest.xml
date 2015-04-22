@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+    <catalogrequest_index_index>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/2columns-left.phtml</template>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="catalogrequest/catalogrequest" name="catalogrequest_page" template="catalogrequest/catalogrequest.phtml"/>
+        </reference>
+        <reference name="left">
+            <block type="cms/block" name="menu_left" before="-">
+                <action method="setBlockId"><block_id>menu_left</block_id></action>
+            </block>
+        </reference>
+    </catalogrequest_index_index>
+
+</layout>
+

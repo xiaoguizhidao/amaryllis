@@ -25,75 +25,8 @@ margin: 0 2em;
 
 
 
-.footer-bottom .container{
-
-
-}
-
-
-.social-links{
-	text-align: right;
-
-	/*background-color:#dcdcdc;*/
-}
-
-.footer_social h1{
-
-	text-align:right;
-}
-
-.social-links li{
-	font-size:2em;
-display: inline;
-margin: ;
-padding: .3em;
-text-align: right;
-tet-align:center;
--webkit-border-radius: 50%;
--moz-border-radius: 50%;
-border-radius: 50%;
-/*border:solid thin #3399cc;*/
-
-}
 
 
 
-/* --------------------Hero Banner-----------------------------
-================================================================
- ----------------------Hero Banner----------------------------*/
-
-
-.hero-content{
-	color:#000;
-	position: absolute;
-	top: 25%;
-	width: 70%;
-	height:50%;
-	text-align: center;
-	margin: 0px auto;
-	left: 50%;
-	margin-left: -35%;
-	background-color:rgba(255,255,255, 0.6);
-	padding: 2em;
-	border: thin solid rgba(255,255,255, 0.9);
-	outline: solid thick rgba(255,255,255, 0.6);
-}
-
-.hero-text{
-	font-size:1.2em;
-    font-family: 'Georgia', serif;
-    font-style:italic;
-}
-
-.hero-content h1{
-	color:#000;
-	border-bottom: solid 1px rgba(255,255,255, 0.6);
-    font-family: 'Montserrat', sans-serif;
-}
-
-.owl-item img{
-width:100%;
-
-}
 
 

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+    <!--
+    Default layout, loads most of the pages
+    -->
+    <wholesaler_index_index>
+        <reference name="head">
+            <action method="setTitle" translate="title" module="customer"><title>Wholesale Accounts</title></action>
+        </reference>
+        <reference name="content">
+            <block type="wholesaler/wholesaler" name="wholesaler_page" template="wholesaler/wholesaler.phtml"/>
+        </reference>
+        <reference name="left">
+            <block type="cms/block" name="menu_left" before="-">
+                <action method="setBlockId"><block_id>menu_left</block_id></action>
+            </block>
+        </reference>
+    </wholesaler_index_index>
+    <wholesaler_corporate_index>
+        <reference name="head">
+            <action method="setTitle" translate="title" module="customer"><title>Corporate Accounts</title></action>
+        </reference>
+        <reference name="content">
+            <block type="wholesaler/wholesaler" name="corporate_page" template="wholesaler/corporate.phtml"/>
+        </reference>
+        <reference name="left">
+            <block type="cms/block" name="menu_left" before="-">
+                <action method="setBlockId"><block_id>menu_left</block_id></action>
+            </block>
+        </reference>
+    </wholesaler_corporate_index>
+
+</layout>

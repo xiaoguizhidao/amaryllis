@@ -1,0 +1,218 @@
+<div class="page-title">
+<h1>Catalog Request</h1>
+</div>
+<div class="catalog-request">
+
+<!--- php code here ---> 
+	
+      
+      <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('request_catalog')->toHtml() ?> 
+      <form id="request_form" class="request_form" action="<?php echo $this->getUrl("catalogrequest/index/save"); ?>" method="POST" name="CFForm_1">      
+      <table width="100%" cellspacing="5" cellpadding="0" border="0" class="info-table linearize-table">
+        
+          <tbody><tr> 
+            <td width="20%" nowrap="" align="right"><font color="#CC0000">*</font><?php echo $this->__("First Name:"); ?></td>
+            <td width="80%">
+              <input type="text" class="textbox required-entry" size="30" value="" name="fname">
+            </td>
+          </tr>
+          <tr> 
+            <td width="20%" nowrap="" align="right"><font color="#CC0000">*</font><?php echo $this->__("Last Name:"); ?></td>
+            <td width="80%">
+              <input type="text" class="textbox required-entry" size="30" value="" name="lname">
+            </td>
+          </tr>
+          <tr> 
+            <td width="20%" nowrap="" align="right"><font color="#CC0000">*</font><?php echo $this->__("Mailing Address:"); ?></td>
+            <td width="80%">
+              <input type="text" class="textbox required-entry" size="30" value="" name="address">
+            </td>
+          </tr>
+          <tr> 
+            <td width="20%" nowrap="" align="right"><font color="#CC0000">*</font><?php echo $this->__("City:"); ?></td>
+            <td width="80%">
+              <input type="text" class="textbox required-entry" size="30" value="" name="city">
+            </td>
+          </tr>
+          <tr> 
+            <td width="20%" nowrap="" align="right"><font color="#CC0000">*</font><?php echo $this->__("State:"); ?></td>
+            <td width="80%"> 
+              <select class="selectbox required-entry" name="state">
+
+                <?php echo $this->getStates(); ?>
+                <option value="AK">Alaska</option>
+                
+              </select>
+            </td>
+          </tr>
+          <tr> 
+            <td width="20%" nowrap="" align="right"><font color="#CC0000">*</font><?php echo $this->__("Zip:"); ?></td>
+            <td width="80%">
+              <input type="text" class="textbox required-entry" maxlength="10" size="10" value="" name="zip">
+            </td>
+          </tr>
+          <tr>
+            <td width="20%" nowrap="" align="right">&nbsp;</td>
+            <td width="80%"><font size="2"><?php echo $this->__("If you'd like to receive our periodic 
+              newsletter, please enter your e-mail below."); ?></font></td>
+          </tr>
+          <tr> 
+            <td width="20%" nowrap="" align="right"><?php echo $this->__("E-mail:"); ?></td>
+            <td width="80%">
+              <input type="text" class="textbox validate-email" size="30" value="" name="email">
+            </td>
+          </tr>
+          <tr> 
+            <td width="20%" nowrap="" align="right"></td>
+            <td width="80%">
+              <input type="hidden" class="textbox" size="30" value="<?php echo Mage::app()->getStore()->getStoreId(); ?>" name="storeid">
+            </td>
+          </tr>
+          <tr> 
+            <td width="20%" nowrap="">&nbsp;</td>
+            <td width="80%">
+                <button class="button" title="Submit" onclick="save_request();return false;"><span><span>Submit</span></span></button>
+            </td>
+          </tr>
+        
+      </tbody>
+      
+   </table> <!--- php code here --->                              
+    </form>                    
+</div>
+<script type="text/javascript">
+    
+    
+    function save_request()
+    {
+        
+       var requestForm = new VarienForm('request_form');
+       
+       var status = requestForm.validator.validate(); 
+       
+       if(status)
+       {
+           requestForm.submit();
+       }
+    }
+    function showContactForm(message)
+    {  
+            var skinurl = '<?php echo $this->getSkinUrl();?>';
+            var lightBoxBackground = new Element("div",{"id":"lightBoxBackground"})
+                    lightBoxBackground.setStyle({"background": "none repeat scroll 0 0 #ffffff",
+                                                 "height": "100%",
+                                                 "left": 0,
+                                                 "opacity":" 0.5",
+                                                 "position": "absolute",
+                                                 "top": 0,
+                                                 "width": "100%",
+                                                 "z-index":"2147483647"
+                                               });
+                    var bodyTag = document.getElementsByTagName("body");
+                    bodyTag[0].insert({"bottom":lightBoxBackground});
+                    bodyTag[0].setStyle({"position":"relative"});
+                    bodyTag[0].insert({"bottom":'<div id="newsleeterErrorMessage" style="position: fixed;z-index:2147483647; background: none repeat scroll 0% 0% #FAF9F7; left: 37%; border: 4px solid #616161; padding: 1% 1%; width: 27%; top: 17%; height: auto; text-align: center;">\n\
+                                                    <div id="closePopupNewsletter"   style="float: right;width:40px;height:40px; margin-top: -8px;"> <a href="javascript:removeLightBox();"><img height=35 width=35 id="setCloseImage"src="'+skinurl+'images/catalogrequest/btn_popup-close.png"/></a></div>\n\
+                                                    <div style="background: none; padding: 3% 3% 3% 20%; font-weight: bolder;">\n\
+                                                    <div id="messages_product_view_request_error" style="float: left;"></div> \n\
+                                                      <div class="contact_us" style="margin-bottom:20px">   \n\
+                                                      <h1><?php echo Mage::helper('contacts')->__('Contact Us') ?></h1> \n\
+<form action="<?php echo $this->getUrl('contacts/index/post'); ?>" id="contactFormRequest" method="post" onsubmit="return false;">\n\
+ <ul class="cantent">\n\
+<li class="fields">\n\
+    <div class="field">\n\
+<div class="input-box">\n\
+<input name="name" id="request_name" placeholder="Contact Name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserName()) ?>" class="input-text required-entry" type="text" />\n\
+</div>\n\
+</div>\n\
+</li>\n\
+<li>\n\
+    <div class="field">\n\
+    <div class="input-box">\n\
+        <input name="email" id="request_email" style="text-transform: none"placeholder="Email" title="<?php echo Mage::helper('contacts')->__('Email') ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserEmail()) ?>" class="input-text required-entry validate-email" type="text" />\n\
+</div>\n\
+</div>\n\
+</li>\n\
+<li>\n\
+<div class="field">\n\
+<div class="input-box">\n\
+<input name="subject" id="subject" title="<?php echo Mage::helper('contacts')->__('Subject') ?>" value="" placeholder="Subject" class="input-text required-entry" type="text" />\n\
+</div>\n\
+</div>\n\
+</li>\n\
+<li>\n\
+<div class="field">\n\
+<div class="input-box">\n\
+    <textarea name="comment" id="request_comment"  title="<?php echo Mage::helper('contacts')->__('Comment') ?>" class="required-entry input-text" cols="5" rows="3"></textarea>\n\
+</div>\n\
+</div>\n\
+</li>\n\
+<li>\n\
+     <input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />\n\
+<button id="contact_request_button" type="submit" title="<?php echo Mage::helper('contacts')->__('Submit') ?>" onclick="javascript:func_submitForm()" class="button"><span><?php echo Mage::helper('contacts')->__('Submit') ?></span></button>\n\
+<div id="ajax-loader-request" class="ajax-loader-request" style="display: none;">\n\
+<img src="<?php echo $this->getSkinUrl('images/catalogrequest/ajax-loader.gif')?>" title="">\n\
+</div>\n\
+<div id="messages_product_view_success_request" style="float: left;"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>\n\
+</li>\n\
+</ul>\n\
+</form>\n\
+</div>                      \n\
+                                                    </div>\n\
+                                                 </div>'}); 
+           
+     }
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+    var contactForm = new VarienForm('contactForm', true);
+//]]>
+function func_submitForm()
+{
+    var categoryForm = new VarienForm('contactFormRequest');
+    var status = categoryForm.validator.validate();
+    if(status)
+    {
+            $('contact_request_button').setStyle({
+               "display":"none" 
+            });
+            $('ajax-loader-request').setStyle({
+               "display":"block" 
+            });
+            
+            $('contactFormRequest').request({
+        onComplete: function()
+            { 
+             $('messages_product_view_success_request').innerHTML = "YOUR INQUIRY WAS SUBMITTED SUCCESSFULLY";
+             $('ajax-loader-request').setStyle({
+               "display":"none" 
+            });  
+            $('request_name').value = "";
+            $('request_email').value = "";
+            $('request_comment').value = "";
+            $('subject').value = "";
+            setTimeout("removeLightBox()",2000);
+            },
+        onFailure: function()
+            {
+                $('messages_product_view_request_error').innerHTML = "YOUR INQUIRY WAS SUBMITTED SUCCESSFULLY";
+                $('ajax-loader-request').setStyle({
+                "display":"none" 
+                });  
+                $('contact_request_button').setStyle({
+               "display":"block" 
+                });
+            }
+       })
+    }
+    
+
+}
+function removeLightBox()
+{
+    $('newsleeterErrorMessage').remove();
+    $('lightBoxBackground').remove();
+    
+}
+</script>
