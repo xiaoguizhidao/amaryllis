@@ -524,7 +524,7 @@ h6,.h6 {
   font-weight: 400;
   font-style: normal;
   text-rendering: optimizeLegibility;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'brandon-grotesque','Montserrat', sans-serif;
 }
 h1, .h1 {
   margin-bottom: 15px;
@@ -545,9 +545,9 @@ h3, .h3 {
 h4,.h4,
 h5,.h5,
 h6,.h6 {
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom:7px;
-  font-size:14px;
+  font-size: 14px;
 }
 
 
@@ -650,7 +650,7 @@ body:not(.customer-account) .block:first-child .block-title {
 }
 
 .block-content {
-  margin-top: 5px;
+  /* margin-top: 5px; */
 }
 
 .block-content.unpad {
@@ -875,7 +875,7 @@ body:not(.customer-account) .block:first-child .block-title {
   text-transform: uppercase;
   vertical-align: middle;
   white-space: nowrap;
-  font-family: Lato;
+  font-family: "brandon-grotesque",sans-serif;
   font-weight: 300;
 }
 .button:hover,
@@ -1655,7 +1655,7 @@ a.button:hover {
  * Price Box - Standard
  */
 .price-box {
-  margin: 7px 0;
+  /* margin: 7px 0; */
 }
 
 .price-box p {
@@ -1892,7 +1892,7 @@ span.weee {
 .no-touch .product-img-box .product-image:not(.zoom-available):hover {
   position: relative;
   display: block;
-  border: 1px solid #ededed;
+  /* border: 1px solid #ededed; */
 }
 
 @media only screen and (max-width: 770px) {
@@ -1979,7 +1979,7 @@ span.weee {
 .toolbar {
   margin-top: 10px;
   margin-bottom: 15px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 2px solid #ddd;
   padding: 5px 10px 0px 10px;
 }
 .toolbar:after {
@@ -3056,7 +3056,7 @@ body {
   height:30px;
   line-height:30px;
   text-transform: uppercase;
-  font-family: Montserrat, sans-serif;
+  font-family: "brandon-grotesque",Montserrat, sans-serif;
   /* letter-spacing: 1px; */
   font-weight: 300;
 }
@@ -3466,9 +3466,9 @@ a.skip-link {
 }
 .nav-primary li.level0 > a {
   text-transform: uppercase;
-  font-family: Lato, 'sans-serif';
+  font-family: "brandon-grotesque",Lato, 'sans-serif';
   color: #444;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* ============================================ *
@@ -4112,6 +4112,7 @@ h3.product-name a,
 h4.product-name a,
 h5.product-name a,
 p.product-name a {
+    color: #333;
 
 }
 h2.product-name a:hover,
@@ -4125,8 +4126,9 @@ p.product-name a:hover {
 
 .products-grid .product-name,
 .products-list .product-name {
-  margin-bottom: 5px;
-  font-size: 14px;
+  margin-bottom: 0;
+  font-size: 13px;
+  text-transform: uppercase;
 }
 .products-grid .product-name a,
 .products-list .product-name a {
@@ -4178,7 +4180,8 @@ p.product-name a:hover {
 
 .products-grid .product-info {
   position: relative;
-  padding-bottom: 60px;
+  padding-bottom: 45px;
+  border-bottom: solid 2px #ddd;
 }
 
 .products-grid .actions {
@@ -4200,7 +4203,7 @@ p.product-name a:hover {
 .products-grid .price-box .price{
   color: #db3876;
   font-size: 14px;
-  font-family: Montserrat, sans-serif;
+  font-family: "brandon-grotesque",Montserrat, sans-serif;
 }
 
 .products-grid .add-to-links {
@@ -6204,9 +6207,13 @@ p.product-name a:hover {
 }
 .cart-table h2 {
 
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 13px;
+  
+
+  font-weight: 400;
   margin-bottom: 0;
+  text-transform: uppercase;
+
 }
 .cart-table thead th,
 .cart-table tbody td {
@@ -8965,6 +8972,7 @@ div.paypal-logo span > img {
 .header-minicart .minicart-wrapper {
   clear: both;
   position: relative;
+  text-align: left;
 }
 .header-minicart .minicart-wrapper:before, .header-minicart .minicart-wrapper:after {
   content: '';
@@ -8998,13 +9006,15 @@ div.paypal-logo span > img {
 .header-minicart .block-subtitle {
   /* color: #50A4CF; */
 
-  font-size: 10px;
-  font-weight: bold;
+  font-size: 11px;
+  /* font-weight: bold; */
   line-height: 1.4;
-  padding: 5px;
+  padding: 9px;
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 0px;
+  font-family: "brandon-grotesque",sans-serif;
+  /* color: #999; */
 }
 .header-minicart .block-subtitle .close {
   width: 40px;
@@ -9023,9 +9033,10 @@ div.paypal-logo span > img {
   padding-top: 0px;
 }
 .header-minicart .mini-products-list li {
-  padding: 8px 5px 8px 11px;
+  padding: 8px;
   border-bottom: 1px solid #DDDDDD;
   position: relative;
+  margin-bottom: 0;
 }
 .header-minicart .mini-products-list li.last {
   border: none;
@@ -9035,13 +9046,20 @@ div.paypal-logo span > img {
 }
 .header-minicart .product-details .product-name {
   padding-top: 0px;
-  font-weight: bold;
+  /* font-weight: bold; */
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 0;
+  font-family: "brandon-grotesque",sans-serif;
 }
 .header-minicart .product-details .product-name a {
 
 }
 .header-minicart .info-wrapper {
-  margin-bottom: 0.5em;
+  /* margin-bottom: 0.5em; */
+  font-size: 12px;
+  color: #db3876;
 }
 .header-minicart .info-wrapper th {
   text-transform: uppercase;
@@ -9081,23 +9099,29 @@ div.paypal-logo span > img {
   opacity: 1;
 }
 .header-minicart .subtotal {
-  background-color: #DDDDDD;
+  background-color: #ececec;
   text-align: center;
   line-height: 2em;
+  border-top: solid 2px #ddd;
+  padding: 5px 0 10px 0;
+  font-family: "brandon-grotesque", sans-serif;
+  color: #333;
+  font-weight: 500;
 }
 .header-minicart .subtotal .label {
-  color: white;
+  color: #333;
   text-transform: uppercase;
 }
 .header-minicart .subtotal .price {
 
 }
 .header-minicart .minicart-actions {
-  padding: 10px;
+  /* padding: 10px; */
   margin-top: 0px;
   overflow: hidden;
   position: relative;
   text-align: center;
+  background: #ececec;
 }
 .header-minicart .minicart-actions .checkout-button {
   min-width: 145px;
@@ -9107,6 +9131,8 @@ div.paypal-logo span > img {
   line-height: 39px;
   text-transform: uppercase;
   font-size: 13px;
+  color: #333;
+  font-family: "brandon-grotesque",sans-serif;
 }
 .header-minicart .minicart-actions .paypal-logo .paypal-or {
   line-height: 1.6;
@@ -10314,7 +10340,7 @@ a:focus {
   color: #777;
 }
 .footer-main h4{
-  color: #799411;
+  color: #555;
   text-transform: uppercase;
 }
 .footer-text{
@@ -10379,11 +10405,13 @@ a:focus {
     font-style:italic;
 }
 .hero-content h1{
-  color:#000;
+  color: #DA3777;
   border-bottom: solid 1px rgba(255,255,255, 0.6);
-    font-family: 'Montserrat', sans-serif;
+    
+  font-family: "brandon-grotesque",'Montserrat', sans-serif;
   text-transform: uppercase;
   font-size: 36px;
+  font-weight: 500;
 }
 @media(max-width:991px){
   .hero-content h1{font-size:28px;}
@@ -10417,6 +10445,30 @@ width:100%;
   border-bottom: solid 1px #ddd;
   padding: 5px 5px;
 }
+.header-minicart .qty-wrapper{
+  display:none;
+}
+.header-minicart .btn-edit{
+  display:none;
+}
+.header-minicart .remove{
+  font-size: 10px;
+  padding-right: 10px;
+  color: #333;
+  text-transform: uppercase;
+}
+.header-minicart .truncated{
+  font-size:11px;
+  display: inline-block;
+}
+.header-minicart .truncated_full_value{
+  font-size:11px;
+}
+.header-minicart .truncated .details{
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #333;
+}
 
  /*  home ============================================ */
 .home-callout{
@@ -10437,7 +10489,8 @@ width:100%;
   margin-bottom:0;
   border-top: solid 2px #ddd;
   padding-top: 15px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+  font-weight: 500;
 }
 .home-featured .item{
   margin:0 10px;
@@ -10448,8 +10501,30 @@ width:100%;
   top: -50px;
   right: 10px;
 }
-
-
+.carousel.products-grid .product-info{
+  border-bottom:none;
+  text-align: center;
+}
+.home-text .widget{
+  border-top:solid 2px #ddd;
+  padding-top:20px;
+  /* margin-top:20px; */
+}
+.badge{
+  padding: 2px 3px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.badge.new{
+  background: #da3775;
+  color:#fff;
+  border-radius: 2px;
+}
+.products-grid .badge{
+  position:absolute;
+  top: -3px;
+  right: 0;
+}
 
  /*  footer ============================================ */
 .footer-top{
@@ -10459,7 +10534,7 @@ width:100%;
 }
 .footer-top h3{
   text-transform:uppercase;
-  color:#555;
+  color: #333;
 }
 .footer-top h3 a{
   color:#555;
@@ -10580,7 +10655,7 @@ a.sort-by-switcher.sort-by-switcher i {
   background: #eee;
 }
 .toolbar-bottom .toolbar{
-  border-top:solid 1px #ccc;
+  /* border-top:solid 1px #ccc; */
   border-bottom:none;
 }
 @media only screen and (max-width: 859px) {
@@ -11092,15 +11167,15 @@ ul.row  > li,
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   border-radius: 30px;
-  background: #4ca49b;
+  background: #da3775;
   filter: Alpha(Opacity=50);/*IE7 fix*/
-  opacity: 0.5;
+  /* opacity: 0.5; */
 }
 /* Clickable class fix problem with hover on touch devices */
 /* Use it for non-touch hover action */
 .owl-theme .owl-controls.clickable .owl-buttons div:hover{
   filter: Alpha(Opacity=100);/*IE7 fix*/
-  opacity: 1;
+  opacity: .8;
   text-decoration: none;
 }
 
