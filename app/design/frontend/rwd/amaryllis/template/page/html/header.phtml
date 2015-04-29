@@ -52,6 +52,13 @@
             </a>
 
             <div class="account-cart-wrapper">
+                
+                <?php if( Mage::getModel('cms/block')->load('header_links')->getIsActive() ){ ?>
+                <div class="header-links">
+                    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('header_links')->toHtml();?>
+                </div>
+                <?php } ?>
+
                 <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
                     <span class="icon"><i class="fa fa-user"></i></span>
                     <span class="label"><?php echo $this->__('Account'); ?></span>
@@ -64,34 +71,23 @@
         </div>
 
         <!-- Navigation -->
-
         <div id="header-nav" class="skip-content">
             <?php echo $this->getChildHtml('topMenu') ?>
         </div>
 
         <!-- Search -->
-
         <div id="header-search" class="skip-content">
             <?php echo $this->getChildHtml('topSearch') ?>
         </div>
 
         <!-- Account -->
-
         <div id="header-account" class="skip-content">
             <?php echo $this->getChildHtml('topLinks') ?>
         </div>
 
-
-
         <div id="header-phone">
             <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('phone_number')->toHtml();?>
         </div>
-
-        <?php if( Mage::getModel('cms/block')->load('header_links')->getIsActive() ){ ?>
-        <div class="header-links">
-            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('header_links')->toHtml();?>
-        </div>
-        <?php } ?>
 
         <?php echo $this->getChildHtml('store_switcher'); ?>
 
