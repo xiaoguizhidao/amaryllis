@@ -10,12 +10,11 @@
         <reference name="content">
             <block type="catalogrequest/catalogrequest" name="catalogrequest_page" template="catalogrequest/catalogrequest.phtml"/>
         </reference>
-        <reference name="left">
-            <block type="cms/block" name="menu_left" before="-">
-                <action method="setBlockId"><block_id>menu_left</block_id></action>
+        <reference name="left_first">
+            <block type="cms/block" name="menu_side" before="-">
+                <action method="setBlockId"><block_id>menu_side</block_id></action>
             </block>
         </reference>
     </catalogrequest_index_index>
-
 </layout>
 
