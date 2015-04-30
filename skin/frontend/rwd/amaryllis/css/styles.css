@@ -540,14 +540,17 @@ h2, .h2 {
 h3, .h3 {
   margin-bottom: 10px;
 
-  font-size: 18px;
+  font-size: 21px;
+  /* text-transform: uppercase; */
+  /* font-weight: 500; */
 }
 h4,.h4,
 h5,.h5,
 h6,.h6 {
   font-weight: 500;
   margin-bottom:7px;
-  font-size: 14px;
+  font-size: 15px;
+  text-transform: uppercase;
 }
 
 
@@ -589,7 +592,7 @@ h6,.h6 {
 .page-title h2,
 .product-name h1,
 .product-name .h1 {
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
   font-size: 24px;
   font-weight: 300;
 
@@ -799,23 +802,48 @@ body:not(.customer-account) .block:first-child .block-title {
 .block-cms-menu .block-title {
   padding-top: 0;
   border-top: none;
+  display:none;
+  font-weight: 400;
+  font-family:"brandon-grotesque",sans-serif;
+  text-transform:uppercase;
+  font-size:12px;
+}
+.block-account .block-content,
+.block-cms-menu .block-content {
+  border:solid 2px #ddd;
+  padding:0 7px;
 }
 .block-account li,
 .block-cms-menu li {
-  margin: 7px 0;
+  font-weight: 400;
+  font-family:"brandon-grotesque",sans-serif;
+  text-transform:uppercase;
+  font-size:12px;
 }
 .block-account li strong,
 .block-cms-menu li strong {
-  font-weight: 400;
-  color: #555;
+
 }
 .block-account li a,
 .block-cms-menu li a {
-
+  padding:7px 4px;
+  border-bottom:solid 1px #ddd;
+  display:block;
+  color:#333;
+}
+.block-account li:last-child a,
+.block-cms-menu li:last-child a{
+  border-bottom:none;
 }
 .block-account li a:hover,
 .block-cms-menu li a:hover {
-  opacity:.7;
+  color:#db3876;
+}
+@media only screen and (max-width: 770px) {
+  .block-account .block-title,
+  .block-cms-menu .block-title {
+    display:block;
+  }
 }
 
 /* ============================================ *
@@ -1077,7 +1105,7 @@ a.button:hover {
  */
 .breadcrumbs {
   overflow: hidden;
-  margin: -15px 0 15px;
+  margin: -15px 0 31px;
 }
 
 .breadcrumbs li {
@@ -1280,7 +1308,7 @@ a.button:hover {
 .col-left,
 .col-right,
 .col-main {
-  padding: 0 10px;
+  padding: 0px 15px;
 }
 
 .col-left {
@@ -2387,15 +2415,15 @@ body.customer-account .data-table .show-details .summary-collapse:hover:before {
 form .legend {
   margin: 0;
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   font-style: normal;
   line-height: 1.4;
   text-rendering: optimizeSpeed;
   text-transform: uppercase;
   margin-bottom: 15px;
-  padding-bottom: 7px;
-  border-bottom: 1px solid #ededed;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #ddd;
 }
 
 /* -------------------------------------------- *
@@ -2500,7 +2528,7 @@ textarea {
   -ms-border-radius: 2px;
   -o-border-radius: 2px;
   border-radius: 2px;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   background: #FFFFFF;
   font-size: 15px;
 }
@@ -2589,7 +2617,7 @@ input:-moz-placeholder {
   width: auto;
   max-width: 85%;
   padding: 0 0 0 8px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: normal;
   vertical-align: top;
 }
@@ -7785,12 +7813,12 @@ body.customer-account .sidebar .block-reorder ol#cart-sidebar-reorder p.product-
  * ============================================ */
 .dashboard .box-head {
   margin-top: 30px;
-  border-bottom: 1px solid #cccccc;
-  padding-bottom: 7px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0;
 }
 .dashboard .box-head h2 {
-  font-size: 15px;
-  font-weight: 600;
+  /* font-size: 15px; */
+  /* font-weight: 600; */
   display: inline-block;
   margin-bottom: 0;
 }
@@ -7803,9 +7831,9 @@ body.customer-account .sidebar .block-reorder ol#cart-sidebar-reorder p.product-
   font-size: 12px;
 }
 .dashboard .box-account {
-  padding-bottom: 40px;
-  border-bottom: 1px solid #cccccc;
-  margin-bottom: 45px;
+  padding-bottom: 30px;
+  /* border-bottom: 1px solid #cccccc; */
+  /* margin-bottom: 30px; */
 }
 .dashboard .box-account p,
 .dashboard .box-account address {
@@ -7825,9 +7853,10 @@ body.customer-account .sidebar .block-reorder ol#cart-sidebar-reorder p.product-
 .dashboard .col2-set .col-1 .box-title h3,
 .dashboard .col2-set .col-2 .box-title h2,
 .dashboard .col2-set .col-2 .box-title h3 {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
   margin-bottom: 0;
+  text-transform: uppercase;
 }
 .dashboard .col2-set .col-1 .box-title a,
 .dashboard .col2-set .col-2 .box-title a {
@@ -10342,6 +10371,9 @@ a:focus {
 .footer-main h4{
   color: #555;
   text-transform: uppercase;
+  margin-bottom: 3px;
+  font-size: 14px;
+  font-weight: 500;
 }
 .footer-text{
   color: #777;
@@ -10535,6 +10567,8 @@ width:100%;
 .footer-top h3{
   text-transform:uppercase;
   color: #333;
+  font-weight: 500;
+  font-size: 18px;
 }
 .footer-top h3 a{
   color:#555;
