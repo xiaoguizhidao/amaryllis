@@ -53,24 +53,27 @@
     <?php echo $_imgHtml ?>
 <?php endif; ?>
 
-<?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
-    <div class="row">
-    <div class="category-description std <?php if($this->isMixedMode()):?>col<?php endif;?>">
-        <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
-    </div>
-<?php endif; ?>
+
 
 <?php if($this->isContentMode()): ?>
+
+    <?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
+        <div class="category-description std">
+            <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
+        </div>
+    <?php endif; ?>
     <?php echo $this->getCmsBlockHtml() ?>
+
 <?php elseif($this->isMixedMode()): ?>
-    <div class="category-cms-block col"><?php echo $this->getCmsBlockHtml() ?></div>
+    <div class="row">
+        <?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
+            <div class="category-description std col">
+                <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
+            </div>
+        <?php endif; ?>
+        <div class="category-cms-block col"><?php echo $this->getCmsBlockHtml() ?></div>
     </div>
     <?php echo $this->getProductListHtml() ?>
 <?php else: ?>
     <?php echo $this->getProductListHtml() ?>
 <?php endif; ?>
-
-
-
-
-
