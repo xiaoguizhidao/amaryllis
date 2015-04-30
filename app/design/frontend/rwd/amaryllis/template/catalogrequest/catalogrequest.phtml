@@ -2,6 +2,8 @@
 <h1>Catalog Request</h1>
 </div>
 <div class="catalog-request">
+
+      <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('content_catalogrequest')->toHtml() ?> 
       <form id="request_form" class="request_form" action="<?php echo $this->getUrl("catalogrequest/index/save"); ?>" method="POST" name="CFForm_1">      
       <table width="100%" cellspacing="5" cellpadding="0" border="0" class="info-table linearize-table">
         

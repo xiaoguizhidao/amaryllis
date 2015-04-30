@@ -8,9 +8,6 @@
             </action>
         </reference>
         <reference name="content">
-            <block type="cms/block" name="content_catalogrequest" before="-">
-                <action method="setBlockId"><block_id>content_catalogrequest</block_id></action>
-            </block>
             <block type="catalogrequest/catalogrequest" name="catalogrequest_page" template="catalogrequest/catalogrequest.phtml"/>
         </reference>
         <reference name="left_first">
@@ -20,4 +17,3 @@
         </reference>
     </catalogrequest_index_index>
 </layout>
-
