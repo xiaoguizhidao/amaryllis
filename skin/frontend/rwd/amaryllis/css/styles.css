@@ -1695,7 +1695,6 @@ a.button:hover {
 }
 
 .price-box .price {
-  color: pink;
   font-size: 16px;
 }
 
@@ -2635,6 +2634,11 @@ p.required,
 /* ============================================ *
  * Form List
  * ============================================ */
+ul.form-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
 .form-list > li {
   margin-bottom: 10px;
 }
@@ -4930,7 +4934,7 @@ p.product-name a:hover {
 .product-view .product-shop .price-box .full-product-price .price {
   color: #db3876;
   font-size: 24px;
-  font-family: Montserrat, sans-serif;
+  font-family: "brandon-grotesque",Montserrat, sans-serif;
 }
 .product-view .product-shop .price-box .special-price .price-label {
   font-size: 16px;
@@ -5705,9 +5709,9 @@ p.product-name a:hover {
 
 /* "display: none" should be removed if products on site have a long list of product options and those product options */
 /*  affect the price so that the customer can see the updated price close to the "Add to Cart" button */
-.product-options-bottom .price-box {
+.product-view .product-shop .product-options-bottom .price-box {
   /* display: none; */
-  float: right;
+  float: left;
   margin: 0 12px 10px 0;
   padding: 0;
   line-height: 48px;
@@ -10574,6 +10578,16 @@ width:100%;
   margin-top:20px;
 
  }
+ .cms-contact-us #contactForm{
+  padding: 40px;
+  background: #ececec;
+ }
+  .cms-contact-us .std ul li {
+    margin-left:0;
+  }
+  .cms-page-view .std p.required, .cms-no-route .std p.required{
+    font-size:12px;
+  }
 
  /*  footer ============================================ */
 .footer-top{

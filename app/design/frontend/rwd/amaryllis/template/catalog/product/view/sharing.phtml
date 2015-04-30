@@ -27,7 +27,7 @@
 
 <?php $_product = $this->getProduct(); ?>
 <?php $_wishlistSubmitUrl = $this->helper('wishlist')->getAddUrl($_product); ?>
-
+<?php /*
 <ul class="sharing-links">
     <?php if ($this->canEmailToFriend()): ?>
         <li><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>" class="link-email-friend" title="<?php echo $this->__('Email to a Friend') ?>"><i class="fa fa-envelope"></i></a></li>
@@ -47,4 +47,8 @@
         <a href="<?php echo 'http://twitter.com/home?status=' . $_productName . '+' . $_productUrl; ?>" target="_blank" title="<?php echo $this->__('Share on Twitter') ?>" class="link-twitter"><i class="fa fa-twitter"></i></a>
     </li>
 </ul>
-
+*/?>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_sharing_toolbox"></div>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55428ec0429654f9" async="async"></script>
