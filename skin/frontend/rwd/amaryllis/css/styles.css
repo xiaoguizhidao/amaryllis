@@ -738,7 +738,7 @@ body:not(.customer-account) .block:first-child .block-title {
     margin-top: -3px;
   }
   .sidebar .block:not(.block-layered-nav) .block-title > strong:hover {
-    background-color: #ececec;
+    background-color: #f9f9f9;
   }
   .sidebar .block:not(.block-layered-nav) .block-title.active > strong {
     margin: 0;
@@ -778,7 +778,7 @@ body:not(.customer-account) .block:first-child .block-title {
     margin-top: -3px;
   }
   .sidebar .block:not(.block-layered-nav) .block-title.active > strong:hover {
-    background-color: #ececec;
+    background-color: #f9f9f9;
   }
   .sidebar .block:not(.block-layered-nav) .block-content {
     padding: 10px;
@@ -2710,7 +2710,7 @@ ul.form-list{
 #checkout-shipping-method-load .sp-methods dd label:hover,
 #co-shipping-method-form .sp-methods dd label:hover,
 .product-options ul.options-list label:hover {
-  background-color: #ececec;
+  background-color: #f9f9f9;
 }
 .form-list .control .no-display + label,
 .sp-methods dt .no-display + label,
@@ -3141,7 +3141,7 @@ body {
     /* padding: 0 30px; */
     text-align:center;
   
-    border-bottom: solid 1px #ececec;
+    border-bottom: solid 1px #f9f9f9;
     /* background: #F4F4EB; */
 }
 
@@ -3753,9 +3753,7 @@ a.skip-link {
     display: inline-block;
     padding: 0 10px;
     text-transform: uppercase;
-  
     color: #323232;
-    font-weight: 300;
 }
 
   #header-account.skip-active {
@@ -4615,7 +4613,7 @@ p.product-name a:hover {
   margin-top: -3px;
 }
 .block-layered-nav .block-subtitle--filter:hover {
-  background-color: #ececec;
+  background-color: #f9f9f9;
 }
 
 .block-layered-nav .block-content .toggle-tabs {
@@ -4660,7 +4658,7 @@ p.product-name a:hover {
   margin-top: -3px;
 }
 .block-layered-nav .block-content > dl > dt:hover {
-  background-color: #ececec;
+  background-color: #f9f9f9;
 }
 .block-layered-nav .block-content > dl > dd {
   padding: 10px;
@@ -4811,7 +4809,7 @@ p.product-name a:hover {
   }
   .block-layered-nav dl ol > li > a:hover {
     text-decoration: none;
-    background: #ececec;
+    background: #f9f9f9;
   }
 }
 .block-layered-nav .currently .block-subtitle {
@@ -5388,7 +5386,7 @@ p.product-name a:hover {
     margin-top: -3px;
   }
   .product-collateral > dl > dt:hover {
-    background-color: #ececec;
+    background-color: #f9f9f9;
   }
   .product-collateral > dl > dd {
     padding: 10px;
@@ -6596,7 +6594,7 @@ p.product-name a:hover {
 }
 .shipping #co-shipping-method-form .sp-methods dd label {
   border: 1px solid #cccccc;
-  background-color: #ececec;
+  background-color: #f9f9f9;
   min-width: 220px;
 }
 .shipping #co-shipping-method-form .sp-methods dd label:hover {
@@ -6816,7 +6814,7 @@ p.product-name a:hover {
  */
 .opc .section .step-title {
   width: 100%;
-  border-top: 1px solid #ececec;
+  border-top: 1px solid #f9f9f9;
   position: relative;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -6840,7 +6838,7 @@ p.product-name a:hover {
 }
 
 .opc .section.active .step-title {
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid #f9f9f9;
 }
 
 .opc .section .step-title a {
@@ -7296,7 +7294,7 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
 .gift-message-form .gift-item {
   padding-bottom: 10px;
   margin-bottom: 10px;
-  border-bottom: solid 1px #ececec;
+  border-bottom: solid 1px #f9f9f9;
 }
 .gift-message-form .gift-item:after {
   content: '';
@@ -7670,7 +7668,7 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
   margin:0 auto;
   max-width: 405px;
   padding:0 20px;
-  background:#ececec;
+  background:#f9f9f9;
 }
 .customer-account-forgotpassword .fieldset{
   padding-top:20px;
@@ -9111,7 +9109,7 @@ div.paypal-logo span > img {
   opacity: 1;
 }
 .header-minicart .subtotal {
-  background-color: #ececec;
+  background-color: #f9f9f9;
   text-align: center;
   line-height: 2em;
   border-top: solid 2px #ddd;
@@ -9133,7 +9131,7 @@ div.paypal-logo span > img {
   overflow: hidden;
   position: relative;
   text-align: center;
-  background: #ececec;
+  background: #f9f9f9;
 }
 .header-minicart .minicart-actions .checkout-button {
   min-width: 145px;
@@ -9503,7 +9501,7 @@ div.paypal-logo span > img {
   margin-top: -3px;
 }
 #accordion > dl > dt:hover {
-  background-color: #ececec;
+  background-color: #f9f9f9;
 }
 #accordion > dl > dd {
   padding: 10px;
@@ -10554,7 +10552,7 @@ width:100%;
 }
 .account-create,
 .customer-account-login .col2-set .col-2{
-  background: #ececec;
+  background: #f9f9f9;
 }
 .customer-account-login .col2-set{
   max-width:890px;
@@ -10614,7 +10612,7 @@ width:100%;
  }
  .cms-contact-us #contactForm{
   padding: 40px;
-  background: #ececec;
+  background: #f9f9f9;
  }
   .cms-contact-us .std ul li {
     margin-left:0;
@@ -10650,7 +10648,7 @@ width:100%;
   font-size:11px;
   padding-top:7px;
   padding-bottom:7px;
-  color:#ececec;
+  color:#f9f9f9;
 }
 .footer-bottom a{
   color:#ccc;

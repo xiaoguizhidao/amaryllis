@@ -38,6 +38,8 @@
         <?php $_selected = ($_group->getId()==$this->getCurrentGroupId()) ? ' class="selected"' : '' ?>
         <li<?php echo $_selected ?>><a href="<?php echo $_group->getHomeUrl() ?>"><?php echo $this->escapeHtml($_group->getName()) ?></a></li>
     <?php endforeach; ?>
+    <li><a href="http://dev.amaryllis.com">Amaryllis NO SID</a></li>
+    <li><a href="http://dev.caladiumbulbs.com">Caladium NO SID</a></li>
     </ul>
 </div>
 <?php endif; ?>
