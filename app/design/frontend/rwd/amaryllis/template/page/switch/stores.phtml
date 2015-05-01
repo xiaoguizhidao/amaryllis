@@ -42,7 +42,7 @@
 <?php
     $this_session_id = Mage::getSingleton('core/session', array('name' => 'frontend'))->getSessionId();
     $this_store_url = explode('?', $_group->getHomeUrl());
-    $this_store_url = $this_store_url[0] . '?SID=' . $this_session_id . '&___store=' . $_group->getCode();
+    $this_store_url = $this_store_url[0] . '?SID=' . $this_session_id . '&___store=' . $_group->getDefaultStore()->getCode();
 ?>
 <li><a href="<?php echo $this_store_url ?>"><?php echo $this->htmlEscape($_group->getName()) ?> x</a></li>
 
