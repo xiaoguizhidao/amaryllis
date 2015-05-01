@@ -43,7 +43,7 @@
              <remove name="wishlist_link"/>
         </reference>
         <reference name="top.links">
-            <action method="removeLinkByUrl"><url helper="customer/getLoginUrl"/></action>
+            <action method="removeLinkByUrl"><url helper="customer/getAccountUrl"/></action>
         </reference>
         <!-- mmc removing since using loginradius -->
 		<reference name="before_body_end">
@@ -54,9 +54,11 @@
 	</customer_logged_out>   
     
     <customer_logged_in>    
+        <!--
         <reference name="top.links">
             <action method="removeLinkByUrl"><url helper="customer/getLogoutUrl"/></action>
         </reference>
+    -->
     </customer_logged_in> 
 
     <!-- Remove Account Navigation Links -->
