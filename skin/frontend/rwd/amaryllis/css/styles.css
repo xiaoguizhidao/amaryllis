@@ -10588,7 +10588,6 @@ width:100%;
  /*  footer ============================================ */
 .footer-top{
   padding-bottom:30px;
-  background: #fcfcfc;
   padding-top: 30px;
 }
 .footer-top h3{
@@ -10603,7 +10602,8 @@ width:100%;
 }
 
 .footer-main{
-  background: #E6E6E4;
+  background: #f9f9f9;
+  border-top:solid 2px #ddd;
   padding-top:30px;
   padding-bottom:30px;
 }
