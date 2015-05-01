@@ -1,0 +1,16 @@
+#checkout-review-table .show-details .summary-collapse:hover:before,
+#shopping-cart-totals-table .show-details .summary-collapse:hover:before,
+body.customer-account .data-table .show-details .summary-collapse:hover:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  display: block;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-top: none;
+  position: static;
+  display: inline-block;
+  margin-right: 5px;
+}
