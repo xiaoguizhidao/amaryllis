@@ -697,7 +697,7 @@ $j(document).ready(function () {
     // =============================================
 
     var skipContents = $j('.skip-content');
-    var skipLinks = $j('.skip-link');
+    var skipLinks = $j('.skip-links .skip-link'); // mmc focused this only on the mobile skip links
 
     skipLinks.on('click', function (e) {
         e.preventDefault();
@@ -724,6 +724,44 @@ $j(document).ready(function () {
             elem.addClass('skip-active');
         }
     });
+/*
+treat account and cart links different that the mobile skip-links skip link
+*/
+
+    var desktopSkipLinks = $j('.header-top-links .skip-link'); // mmc focused this only on the mobile skip links
+
+    desktopSkipLinks.on('click', function (e) {
+        e.preventDefault();
+    });
+    // mmc change menus to hover
+    desktopSkipLinks.on('mouseenter', function () {
+        var self = $j(this);
+        // Use the data-target-element attribute, if it exists. Fall back to href.
+        var target = self.attr('data-target-element') ? self.attr('data-target-element') : self.attr('href');
+        // Get target element
+        var elem = $j(target);
+
+        // Check if stub is open
+        //var isSkipContentOpen = elem.hasClass('skip-active') ? 1 : 0;
+
+        // Hide all stubs
+        desktopSkipLinks.removeClass('skip-active');
+        skipContents.removeClass('skip-active');
+
+        self.addClass('skip-active');
+        elem.addClass('skip-active');
+        
+    });
+    // mmc added to close menus when hover off the nav item or menu
+    $j(document).on('mouseover', function(event) {
+      if (!$j(event.target).closest('.skip-content,.skip-link').length) {
+        // Hide all stubs
+        skipLinks.removeClass('skip-active');
+        desktopSkipLinks.removeClass('skip-active');
+        skipContents.removeClass('skip-active');
+      }
+    });
+
 
     $j('#header-cart').on('click', '.skip-link-close', function(e) {
         var parent = $j(this).parents('.skip-content');

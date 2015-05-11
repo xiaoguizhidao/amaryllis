@@ -44,21 +44,82 @@
         </reference>
         <reference name="top.links">
             <action method="removeLinkByUrl"><url helper="customer/getAccountUrl"/></action>
-        </reference>
-        <!-- mmc removing since using loginradius -->
-		<reference name="before_body_end">
             <!--
-            <block type="core/template" name="modal_subscribe" template="newsletter/modal-subscribe.phtml" after="-"></block>
-        -->
+            <action method="removeLinkByUrl"><url helper="customer/getRegisterUrl"/></action>
+            <action method="removeLinkByUrl"><url helper="customer/getLoginUrl"/></action>
+            <action method="addLink" translate="label title">
+                <label><![CDATA[Login]]></label>
+                <url>#</url>
+                <title>Login</title>
+                <prepare/>
+                <urlParams/>
+                <position>1</position>
+                <liParams/>
+                <aParams>data-toggle="modal" data-target="#modal-login" class="login-link"</aParams>
+                <beforeText/>
+                <afterText/>
+            </action>
+            <action method="addLink" translate="label title">
+                <label><![CDATA[Register]]></label>
+                <url>#</url>
+                <title>Register</title>
+                <prepare/>
+                <urlParams/>
+                <position>1</position>
+                <liParams/>
+                <aParams>data-toggle="modal" data-target="#modal-login" class="register-link"</aParams>
+                <beforeText/>
+                <afterText/>
+            </action>
+            -->
+        </reference>
+		<reference name="before_body_end">
+            <block type="core/template" name="modal_subscribe" template="modal/subscribe.phtml" after="-"></block>
+            <block type="core/template" name="modal_login" template="modal/login.phtml" after="-"></block>
         </reference>    
 	</customer_logged_out>   
     
     <customer_logged_in>    
-        <!--
         <reference name="top.links">
             <action method="removeLinkByUrl"><url helper="customer/getLogoutUrl"/></action>
+            <action method="removeLinkByUrl"><url helper="customer/getAccountUrl"/></action>
+            <action method="addLink" translate="label title">
+                <label><![CDATA[Profile]]></label>
+                <url>/customer/account/</url>  <!-- can use full url also -->
+                <title>Profile</title>
+                <prepare/> <!-- set true if adding base url param -->
+                <urlParams/>
+                <position>1</position>
+                <liParams/>
+                <aParams></aParams>
+                <beforeText/>
+                <afterText/>
+            </action>
+            <action method="addLink" translate="label title">
+                <label><![CDATA[Orders]]></label>
+                <url>/sales/order/history/</url>  <!-- can use full url also -->
+                <title>Orders</title>
+                <prepare/> <!-- set true if adding base url param -->
+                <urlParams/>
+                <position>99</position>
+                <liParams/>
+                <aParams></aParams>
+                <beforeText/>
+                <afterText/>
+            </action>
+            <action method="addLink" translate="label title">
+                <label><![CDATA[Logout]]></label>
+                <url helper="customer/getLogoutUrl"/> <!-- can use full url also -->
+                <title>Logout</title>
+                <prepare/> <!-- set true if adding base url param -->
+                <urlParams/>
+                <position>100</position>
+                <liParams>class="logout-link"</liParams>
+                <aParams></aParams>
+                <beforeText/>
+                <afterText/>
+            </action>
         </reference>
-    -->
     </customer_logged_in> 
 
     <!-- Remove Account Navigation Links -->

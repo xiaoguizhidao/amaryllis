@@ -67,8 +67,8 @@
 
                 <action method="addItem"><type>skin_js</type><name>js/app.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/lib/imagesloaded.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/minicart.js</name></action>
 
-                <action method="addLinkRel"><rel>stylesheet</rel><href>//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700,700italic|Oswald|Lato:400,700|Slabo+27px|Lora:400,400italic,700,700italic|Montserrat:400,700</href></action>
 
                 <!-- Typekit -->
                 <block type="core/text" name="head.typekit.js">
@@ -78,8 +78,15 @@
                     <action method="setText"><text><![CDATA[<script>try{Typekit.load();}catch(e){}</script>]]>&#10;</text></action>
                 </block>
 
+
+
+                <action method="addLinkRel"><rel>stylesheet</rel><href>//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700,700italic</href></action>
+
+
+
                 <action method="addLinkRel"><rel>stylesheet</rel><href>//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css</href></action>
-                <action method="addItem"><type>skin_js</type><name>js/minicart.js</name></action>
+
+                <action method="addItem"><type>skin_css</type><name>js/lib/bootstrap/bootstrap.min.css</name><params/></action>
 
                 <!-- Add stylesheets with no media queries for use in IE 8 and below -->
                 <action method="addItem"><type>skin_css</type><name>css/styles-ie8.css</name><params/><if><![CDATA[ (lte IE 8) & (!IEMobile)]]></if></action>
