@@ -75,7 +75,7 @@
         </reference>
 		<reference name="before_body_end">
             <block type="core/template" name="modal_subscribe" template="modal/subscribe.phtml" after="-"></block>
-            <block type="core/template" name="modal_login" template="modal/login.phtml" after="-"></block>
+            <!-- <block type="core/template" name="modal_login" template="modal/login.phtml" after="-"></block> -->
         </reference>    
 	</customer_logged_out>   
     
