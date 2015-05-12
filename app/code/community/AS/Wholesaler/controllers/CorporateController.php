@@ -64,7 +64,7 @@ class AS_Wholesaler_CorporateController  extends Mage_Core_Controller_Front_Acti
                 catch (Exception $e) 
                 {
                         Mage::getSingleton('core/session')->addError($this->__('There was a problem trying to save the corporate inquiry. Please try again.'));
-                        $this->_redirect('wholesaler/corporate/index/',$data);
+                        $this->_redirectReferer('wholesaler/corporate/index/',$data);
                 }
         }
         
