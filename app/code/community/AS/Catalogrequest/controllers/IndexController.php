@@ -40,11 +40,9 @@ class AS_Catalogrequest_IndexController  extends Mage_Core_Controller_Front_Acti
             $catalogRequestModel->setStoreId($data["storeid"]);
             $catalogRequestModel->save();
             Mage::getSingleton('core/session')->addSuccess($this->__('Your Request has been sent successfully'));
-            $this->_redirect('*/*');
+            //$this->_redirect('*/*');
+            $this->_redirectReferer();
                 
-                
-            
-            
         }
         catch(Exception $e)
         {
