@@ -24,12 +24,12 @@ class AS_Wholesaler_CorporateController  extends Mage_Core_Controller_Front_Acti
         if($captchapost == "")
         {
            Mage::getSingleton('core/session')->addError($this->__('Please enter captcha'));
-           $this->_redirect('wholesaler/corporate/index/',$data); 
+           $this->_redirectReferer($data); 
         }    
         elseif(($captchapost != "") && ($captchapost != $captchasession))
         {
            Mage::getSingleton('core/session')->addError($this->__('Please correct captcha'));
-           $this->_redirect('wholesaler/corporate/index/',$data); 
+           $this->_redirectReferer($data); 
         }
         else
         {
