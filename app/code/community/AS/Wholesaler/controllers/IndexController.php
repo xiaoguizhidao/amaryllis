@@ -27,7 +27,7 @@ class AS_Wholesaler_IndexController  extends Mage_Core_Controller_Front_Action
         
         $data = $this->getRequest()->getPost();
         $captchapost = $data["captchatext"];
-        $captchasession = Mage::getSingleton('core/session')->getCaptchaValue($code);;
+        $captchasession = Mage::getSingleton('core/session')->getCaptchaValue($code);
         
         if($captchapost == "")
         {
@@ -66,7 +66,8 @@ class AS_Wholesaler_IndexController  extends Mage_Core_Controller_Front_Action
 
                         Mage::getSingleton('core/session')->addSuccess($this->__('Thank You for your interest in becoming a wholesaler. We will be in touch with you shortly.'));
 
-                        $this->_redirect('wholesaler/index/index/id/'.$model->getId());
+                        //$this->_redirect('wholesaler/index/index/id/'.$model->getId());
+                        $this->_redirectReferer();
                 }
                 catch (Exception $e) 
                 {

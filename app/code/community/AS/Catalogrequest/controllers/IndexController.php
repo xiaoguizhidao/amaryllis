@@ -47,7 +47,8 @@ class AS_Catalogrequest_IndexController  extends Mage_Core_Controller_Front_Acti
         catch(Exception $e)
         {
             Mage::getSingleton('core/session')->addError($this->__('Error in Saving Data please try again .').$e->getMessage());
-            $this->_redirect('*/*');
+            //$this->_redirect('*/*');
+            $this->_redirectReferer();
         }
         
     }

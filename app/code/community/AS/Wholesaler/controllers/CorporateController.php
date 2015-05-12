@@ -58,7 +58,8 @@ class AS_Wholesaler_CorporateController  extends Mage_Core_Controller_Front_Acti
 
                         Mage::getSingleton('core/session')->addSuccess($this->__('Thank You for your interest. We received your inquiry and will be in touch with you shortly.'));
 
-                        $this->_redirect('wholesaler/corporate/index/id/'.$model->getId());
+                        //$this->_redirect('wholesaler/corporate/index/id/'.$model->getId());
+                        $this->_redirectReferer();
                 }
                 catch (Exception $e) 
                 {
