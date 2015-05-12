@@ -29,7 +29,8 @@ $data = $this->fetchCorporateData();
     <h1><?php echo Mage::helper('contacts')->__('Corporate Accounts') ?></h1>
 </div>
 <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('content_corporate')->toHtml() ?> 
-<form method="post" id="wholesaleaccountform" action="<?php echo $this->getUrl("wholesaler/corporate/save") ?>">
+<form method="post" id="wholesaleaccountform" action="<?php echo $this->getUrl("wholesaler/corporate/save",array(
+    '_secure' => true)) ?>">
     <input type="hidden" value="<?php echo Mage::app()->getStore()->getStoreId(); ?>" name="status"/>
     <input type="hidden" value="<?php echo Mage::getSingleton("core/session")->getFormKey(); ?>" name="form_key"/>
     <input type="hidden" value="<?php echo $data["id"]; ?>" name="id"/>
