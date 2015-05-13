@@ -24,12 +24,12 @@ class AS_Wholesaler_CorporateController  extends Mage_Core_Controller_Front_Acti
         if($captchapost == "")
         {
            Mage::getSingleton('core/session')->addError($this->__('Please enter captcha'));
-           $this->_redirectReferer($data); 
+           $this->_redirect('wholesaler/corporate/index/',$data); 
         }    
         elseif(($captchapost != "") && ($captchapost != $captchasession))
         {
            Mage::getSingleton('core/session')->addError($this->__('Please correct captcha'));
-           $this->_redirectReferer($data); 
+           $this->_redirect('wholesaler/corporate/index/',$data); 
         }
         else
         {
@@ -58,13 +58,12 @@ class AS_Wholesaler_CorporateController  extends Mage_Core_Controller_Front_Acti
 
                         Mage::getSingleton('core/session')->addSuccess($this->__('Thank You for your interest. We received your inquiry and will be in touch with you shortly.'));
 
-                        //$this->_redirect('wholesaler/corporate/index/id/'.$model->getId());
-                        $this->_redirectReferer();
+                        $this->_redirect('wholesaler/corporate/index/id/'.$model->getId());
                 }
                 catch (Exception $e) 
                 {
                         Mage::getSingleton('core/session')->addError($this->__('There was a problem trying to save the corporate inquiry. Please try again.'));
-                        $this->_redirectReferer('wholesaler/corporate/index/',$data);
+                        $this->_redirect('wholesaler/corporate/index/',$data);
                 }
         }
         
